@@ -29,7 +29,7 @@
    },
    "📊今日任务数": {
     "type": "text",
-    "value": "本次共 6 步（4 个任务）"
+    "value": "本次共 19 步（16 个任务）"
    }
   },
   "taskList": [
@@ -54,12 +54,116 @@
     "before": [],
     "item": [
      {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=44755&sceneId=5365&implId=other_1491_1156001_44755_0&asac=2A216088LD6TNDJO5XW1UY",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=44739&sceneId=5365&implId=other_1591_911108_44739_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
-      "n": "去蚂蚁庄园捐爱心蛋",
-      "bare": "https://ulink.alipay.com/?scheme=alipays%3A%2F%2Fplatformapi%2Fstartapp%3FappId%3D66666674%26chInfo%3Dtaojinbi_jd_v2%26source%3Dtaojinbi_jd_v2%26appClearTop%3Dfalse%26startMultApp%3DYES&lowVersionMessage=false&nojump=false",
+      "n": "去支付宝农场逛逛哟",
+      "bare": "https://render.alipay.com/p/s/i/?scheme=alipays%3A%2F%2Fplatformapi%2Fstartapp%3FappId%3D68687599%26action%3Dshow_game_panel%26source%3DTAOJINBI_TASK",
       "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 44755
+      "id": 44739
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=64890&sceneId=5365&implId=other_1390_1950004_64890_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 6,
+      "n": "去百度App领现金",
+      "bare": "baiduboxapp://v1/easybrowse/open?url=https%3A%2F%2Factivity.baidu.com%2Fincentive%2FincentiveHome%3Fchannel%3Dhuanliang%26productid%3D9%26idfrom%3Dtbtjbhl%26taskInfo%3D%257B%2522id%2522%253A%2522983%2522%252C%2522type%2522%253A7%252C%2522rule%2522%253A%257B%2522stay%2522%253A1%257D%252C%2522guide%2522%253A%257B%2522uiType%2522%253A-1%257D%252C%2522sdkParams%2522%253A%257B%2522fromToken%2522%253A%2522:fromToken:%2522%252C%2522deliveryId%2522%253A%2522:deliveryId:%2522%252C%2522sceneId%2522%253A%2522:sceneId:%2522%252C%2522outActID%2522%253A%25229%2522%257D%252C%2522outside%2522%253A2%257D&newbrowser=1&forbidautorotate=1&type=immerse&needlog=1&logargs=%7B%22source%22%3A%221028199u%22%2C%22channel%22%3A%221028199v%22%2C%22from%22%3A%22ceug%22%2C%22page%22%3A%22ceug%22%2C%22type%22%3A%22ceug%22%2C%22value%22%3A%22ceug%22%7D&backlocation=1&bannerswitch=1&params=%7B%22showtoolbar%22%3A%220%22%2C%22backgesture%22%3A%220%22%7D&append=1&zoomswitch=0&append_di=1",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 64890
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=65151&sceneId=5365&implId=other_1390_1943003_65151_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "去蚂蚁庄园逛逛哟",
+      "bare": "alipays://platformapi/startapp?appId=20000067&sceneCode=KF_HZHD&chInfo=ch_taobao&subSceneCode=taobaogolden_antfarm_1128&pikshemo=YES&url=https%3A%2F%2Frender.alipay.com%2Fp%2Fc%2F180020570000012230%2Findex.html%3F%26df%3Dparams%26sceneCode%3Dtaobaogolden_antfarm_1128%26chInfo%3Dch_taobao%26channel%3D4%26deliveryId%3D:deliveryId:%26sceneId%3D:sceneId:%26implId%3D:implId:%26fromToken%3D:fromToken:",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 65151
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=65274&sceneId=5365&implId=other_1390_1945008_65274_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 20,
+      "n": "去神奇海洋逛逛吧",
+      "bare": "alipays://platformapi/startapp?appId=20000067&sceneCode=KF_HZHD&chInfo=ch_taobao&subSceneCode=taobaogolden_antforest_0118&pikshemo=YES&url=https%3A%2F%2Frender.alipay.com%2Fp%2Fc%2F180020570000012230%2Findex.html%3F%26df%3Dparams%26sceneCode%3Dtaobaogolden_antforest_0118%26chInfo%3Dch_taobao%26channel%3D4%26deliveryId%3D:deliveryId:%26sceneId%3D:sceneId:%26implId%3D:implId:%26fromToken%3D:fromToken:",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 65274
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=65773&sceneId=5365&implId=other_1390_1977004_65773_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 20,
+      "n": "去蚂蚁森林收能量",
+      "bare": "alipays://platformapi/startapp?appId=20000067&sceneCode=KF_HZHD&chInfo=ch_taobao&subSceneCode=tbgolden_antforestzj_0719&pikshemo=YES&url=https%3A%2F%2Frender.alipay.com%2Fp%2Fc%2F180020570000012230%2Findex.html%3F%26df%3Dparams%26sceneCode%3Dtbgolden_antforestzj_0719%26chInfo%3Dch_taobao%26channel%3D4%26deliveryId%3D:deliveryId:%26sceneId%3D:sceneId:%26implId%3D:implId:%26fromToken%3D:fromToken:",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 65773
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=68817&sceneId=5365&implId=other_1390_2020001_68817_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "去百度极速版领现金",
+      "bare": "baiduboxlite://v1/easybrowse/open?url=https%3A%2F%2Factivity.baidu.com%2Fincentive%2FincentiveHome%3Fproductid%3D2%26idfrom%3Dhuanliang_17%26taskInfo%3D%257B%2522id%2522%253A%25221150%2522%252C%2522type%2522%253A7%252C%2522rule%2522%253A%257B%2522stay%2522%253A0%257D%252C%2522sdkParams%2522%253A%257B%2522token%2522%253A%2522!(token)%2522%252C%2522outActID%2522%253A17%257D%252C%2522outside%2522%253A2%252C%2522guide%2522%253A%257B%2522uiType%2522%253A-1%257D%257D%26channel%3Dhuanliang&newbrowser=1&forbidautorotate=1&type=immerse&needlog=1&logargs=%7B%22source%22%3A%221028505v%22%2C%22channel%22%3A%221028505y%22%2C%22from%22%3A%22ceug%22%2C%22page%22%3A%22ceug%22%2C%22type%22%3A%22ceug%22%2C%22value%22%3A%22ceug%22%7D&backlocation=1&bannerswitch=1&params=%7B%22showtoolbar%22%3A%220%22%2C%22backgesture%22%3A%220%22%7D&append=1&zoomswitch=0&append_di=1&onlyone=1",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 68817
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=79268&sceneId=5365&implId=count_1390_3071015_79268_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "去摇钱树施肥领钱",
+      "bare": "alipays://platformapi/startapp?appId=68687599&source=2026_taocoin_yqs&chInfo=2026_taocoin_yqs",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 79268
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=87671&sceneId=5365&implId=other_1390_1_87671_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "来淘宝闪购拿大额补贴",
+      "bare": "https://tb.ele.me/app/alsc-user-growth/sgyx/home?wh_weex=true&weex_mode=dom&tms_force=true&_wx_statusbar_hidden=true&wx_navbar_hidden=true&disableNav=YES&status_bar_transparent=true&isTab=false&from=miniapp.taobao&channelInfo=%7B%22channel%22%3A%22miniapp%22%2C%22subChannel%22%3A%22miniapp.taobao%22%2C%22subSubChannel%22%3A%22miniapp.taobao.et%22%7D&page_name=sgyx&alsc_exsrc=ES0006280612&scene=27ead67877bf47398ce5be266b64e870&et_chnl_code=coin_order",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 87671
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=87671&sceneId=5365&implId=other_1390_1_87671_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "来淘宝闪购拿大额补贴",
+      "bare": "https://tb.ele.me/app/alsc-user-growth/sgyx/home?wh_weex=true&weex_mode=dom&tms_force=true&_wx_statusbar_hidden=true&wx_navbar_hidden=true&disableNav=YES&status_bar_transparent=true&isTab=false&from=miniapp.taobao&channelInfo=%7B%22channel%22%3A%22miniapp%22%2C%22subChannel%22%3A%22miniapp.taobao%22%2C%22subSubChannel%22%3A%22miniapp.taobao.et%22%7D&page_name=sgyx&alsc_exsrc=ES0006280612&scene=27ead67877bf47398ce5be266b64e870&et_chnl_code=coin_order",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 87671
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=89655&sceneId=5365&implId=other_1390_2753005_89655_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "逛一逛芝麻信用",
+      "bare": "alipays://platformapi/startapp?appId=20000067&sceneCode=KF_HZHD&chInfo=ch_taobao&subSceneCode=TBgolden_zhima_0529&pikshemo=YES&url=https%3A%2F%2Frender.alipay.com%2Fp%2Fc%2F180020570000012230%2Findex.html%3F%26df%3Dparams%26sceneCode%3DTBgolden_zhima_0529%26chInfo%3Dch_taobao%26channel%3D4%26deliveryId%3D:deliveryId:%26sceneId%3D:sceneId:%26implId%3D:implId:%26fromToken%3D:fromToken:&alipayAppdonwlaodPlanId=049b3973281e4136aefaadf6ac1cf765",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 89655
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94026&sceneId=5365&implId=count_1390_2888004_94026_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "逛百县百品助农频道",
+      "bare": "alipays://platformapi/startapp?appId=20000067&url=https%3A%2F%2Fpages.tmall.com%2Fwow%2Fz%2Fhdwk%2Falipayfarm%2Fcountry%3Ftype%3Dvisit%26source%3Dtaocoin%26__webview_options__%3DreadTitle%253DNO%2526ttb%253Dauto%2526bc%253D5220925",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 94026
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=102513&sceneId=5365&implId=other_1390_3226017_102513_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "去金豆夺宝0元领盲盒",
+      "bare": "alipays://platformapi/startapp?appId=2060090000394098&url=https%3A%2F%2Frender.alipay.com%2Fp%2Fyuyan%2F180020010001291350%2Findex.html%3Fsource%3Dgoldenbean_618_task%26caprMode%3Dsync&ext_biz=sceneId%3D:sceneId:%26deliveryId%3D:deliveryId:%26fromToken%3D:fromToken:%26implId%3D:implId:",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 102513
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=103764&sceneId=5365&implId=other_1390_3339005_103764_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "去支付宝红包抢现金",
+      "bare": "alipays://platformapi/startapp?appId=2021001168603174&page=/pages/marketing-index/index&chInfo=bc_yxc_taojinbi",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 103764
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=104787&sceneId=5365&implId=other_1390_3470029_104787_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "领闪购红包下单直接省",
+      "bare": "https://m.duanqu.com/?_ariver_appid=8251537&page=plugin-private%3A%2F%2F2021004134685665%2Fpages%2Ftaoke-guide%2Findex%3Ffrom%3Dminiapp.taobao%26channelInfo%3D%7B%22subSubChannel%22%3A%22miniapp.taobao.et%22%7D%26alsc_exsrc%3DES0006299852%26scene%3Db5a91a6997644f1fb639e52bb0acae25",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 104787
      },
      {
       "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=80330&sceneId=5365&implId=other_1390_2487017_80330_0&asac=2A216088LD6TNDJO5XW1UY",
@@ -89,5 +193,5 @@
    }
   }
  },
- "_mine": "scene 5365 日常版；任务 4 个 / 4 步；生成时间见文件头。排除：支付宝4、饿了么1、duanqu1、下单1、拉人1、小游戏1、拍立淘404、process组1、签到1(页面自动)。 生成于 2026-10-22"
+ "_mine": "scene 5365 日常版；任务 16 个 / 17 步；全程走浮层页。收 SYSTEM_SWITCH/EXCUTE 跨端类（浮层页不执行 action，只看 status==ACCEPTED）。排除：下单/拉人/分享类、无 action 的疑似测试任务。 生成于 2026-10-22"
 }

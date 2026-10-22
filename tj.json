@@ -29,7 +29,7 @@
    },
    "📊今日任务数": {
     "type": "text",
-    "value": "本次共 4 步（2 个任务）"
+    "value": "本次共 6 步（4 个任务）"
    }
   },
   "taskList": [
@@ -54,6 +54,14 @@
     "before": [],
     "item": [
      {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=44755&sceneId=5365&implId=other_1491_1156001_44755_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "去蚂蚁庄园捐爱心蛋",
+      "bare": "https://ulink.alipay.com/?scheme=alipays%3A%2F%2Fplatformapi%2Fstartapp%3FappId%3D66666674%26chInfo%3Dtaojinbi_jd_v2%26source%3Dtaojinbi_jd_v2%26appClearTop%3Dfalse%26startMultApp%3DYES&lowVersionMessage=false&nojump=false",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 44755
+     },
+     {
       "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=80330&sceneId=5365&implId=other_1390_2487017_80330_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "去淘宝直播提现",
@@ -68,10 +76,18 @@
       "bare": "https://mo.m.taobao.com/etao2/page_1754537425943?ep=bpTovMIXJfY&taskId=11648&etao_biz_cooperation=H0HwxDeCvA%2F54Zos%2BPr3Jtgq5Ap4OynouGY%2FkaPRqzg%3D",
       "asac": "2A216088LD6TNDJO5XW1UY",
       "id": 89609
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=103338&sceneId=5365&implId=other_1390_3267022_103338_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "玩三国冰河时代游戏",
+      "bare": "https://m.duanqu.com?_ariver_appid=3000000132997253&_mp_code=tb&_container_type=gm&hdkf_from=coin666",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 103338
      }
     ]
    }
   }
  },
- "_mine": "scene 5365 日常版；任务 2 个 / 2 步；生成时间见文件头。排除：支付宝4、饿了么1、duanqu1、下单1、拉人1、小游戏1、拍立淘404、process组1、签到1(页面自动)。 生成于 2026-10-22"
+ "_mine": "scene 5365 日常版；任务 4 个 / 4 步；生成时间见文件头。排除：支付宝4、饿了么1、duanqu1、下单1、拉人1、小游戏1、拍立淘404、process组1、签到1(页面自动)。 生成于 2026-10-22"
 }

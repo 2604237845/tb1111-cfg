@@ -1,10 +1,17 @@
 /**
  * tj2.js —— 淘宝「日常版」淘金币（sceneId=5365）任务跳转脚本
  *
- * 🔴🔴 2026-10-23 02:40 起：tj.js 与本文件**内容完全一致**（同一份超集脚本）。
- *    原因：快捷指令动作 #193 是写死的明文 URL，老安装包指向 tj.js；
- *    如果新配置（纯 id + baseurl）遇上老 tj.js，纯 id 会被当 URL 打开 ⇒ 又弹「呼叫号码」。
- *    所以两个文件都必须是这份带 baseurl 的超集，指向哪个都不会坏。
+ * 本文件与 tj.js 内容完全一致（同一份超集脚本）。
+ *   原因：快捷指令动作编号 193 是写死的明文 URL，老安装包指向 tj.js；
+ *   如果新配置（纯 id 加 baseurl）遇上老 tj.js，纯 id 会被当 URL 打开，又弹「呼叫号码」。
+ *   所以两个文件都必须是这份带 baseurl 的超集，指向哪个都不会坏。
+ *
+ * 🔴🔴🔴 本文件里绝对不能出现井号和百分号：
+ *   快捷指令是把「配置 JSON 加本脚本」拼成一个 data:text/html 地址丢给网页执行的。
+ *   地址里井号之后的内容会被当成锚点整段丢弃，脚本被截断，语法错误，然后静默退出；
+ *   百分号会被当成转义符。
+ *   2026-10-23 02:44「直接结束运行」就是注释里写了一个井号（动作编号那里）造成的。
+ *   _daily/check_js_safe.py 会在发布前拦这两种字符，别绕过它。
  *
  * 与旧 tj.js 的关系：旧版全部能力都在（完整地址 / 对象写法 / tbopen 容器 /
  * 断点续跑 / 结构完全一致），只多一样东西 —— baseurl 模板支持。
@@ -35,13 +42,24 @@
  */
 function run() {
     var OUT = [];
+
+    // tbopen 容器：h5Url 必须整体 encode，否则目标地址里的 & 会被外层吃掉
+    var TBOPEN = 'taobao://m.taobao.com/tbopen/index.html?h5Url=';
+    var DIAG = 'https://tb1111-cfg2.app.workbuddy.host/diag.html?r=';
+
+    // 🔴 失败必须看得见：以前这里返回空数组，快捷指令就「直接结束」，什么提示都没有。
+    //    现在改成打开一个说明页（8 秒），至少能看出是配置没拉到还是脚本报错。
+    function bail(reason) {
+        return JSON.stringify({
+            succes: 'ok',
+            data: [{ url: TBOPEN + encodeURIComponent(DIAG + reason), wait: 8 }]
+        });
+    }
+
     try {
         if (!DATA || !DATA.activity || !DATA.taskData) {
-            return JSON.stringify({ succes: 'ok', data: [] });
+            return bail('nodata');
         }
-
-        // tbopen 容器：h5Url 必须整体 encode，否则目标地址里的 & 会被外层吃掉
-        var TBOPEN = 'taobao://m.taobao.com/tbopen/index.html?h5Url=';
 
         function wrap(u) {
             u = String(u == null ? '' : u).replace(/^\s+|\s+$/g, '');
@@ -95,6 +113,10 @@ function run() {
 
             // ---- 3. 任务本体 ----
             var items = tk.item || [];
+            // item 必须是数组。写成字符串时 .length 会按字符遍历，产出 "n","o" 这种垃圾步骤
+            if (Object.prototype.toString.call(items) !== '[object Array]') {
+                return bail('badcfg');
+            }
             for (var i = 0; i < items.length; i++) {
                 var it = items[i];
                 var u = '', w = defWait, name = '';
@@ -138,7 +160,7 @@ function run() {
             }
         }
     } catch (e) {
-        return JSON.stringify({ succes: 'ok', data: [] });
+        return bail('error');
     }
 
     // 断点续跑：runNum=1 / 0 / 空 都从头；>1 从第 runNum 条开始

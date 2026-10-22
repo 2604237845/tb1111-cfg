@@ -34,7 +34,7 @@
  "taskData": {
   "tag": "zhuanhuafei",
   "common": {
-   "url": "https://tb1111-cfg2.app.workbuddy.host/tb.js"
+   "url": "https://fastly.jsdelivr.net/gh/2604237845/tb1111-cfg@main/tb.js"
   },
   "赚话费": {
    "type": "task1",

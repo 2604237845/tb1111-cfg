@@ -29,7 +29,7 @@
    },
    "📊今日任务数": {
     "type": "text",
-    "value": "本次共 11 步（5 个任务）"
+    "value": "本次共 4 步（2 个任务）"
    }
   },
   "taskList": [
@@ -54,16 +54,8 @@
     "before": [],
     "item": [
      {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=44744&sceneId=5365&implId=other_1546_1662003_44744_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 12,
-      "n": "去闲鱼币领现金红包",
-      "bare": "https://market.m.taobao.com/app/idleFish-F2e/call-fish-app/fishcoinca.html?channel=taojinbi",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 44744
-     },
-     {
       "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=80330&sceneId=5365&implId=other_1390_2487017_80330_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 12,
+      "w": 15,
       "n": "去淘宝直播提现",
       "bare": "https://market.m.taobao.com/app/tb-zhibo-app/callapp-mid-center/home.html?bizCode=taojinbilahuo-2&deliveryId=80330&fromSource=55",
       "asac": "2A216088LD6TNDJO5XW1UY",
@@ -71,63 +63,15 @@
      },
      {
       "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=89609&sceneId=5365&implId=other_1390_2732004_89609_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 12,
+      "w": 15,
       "n": "点击商品领优惠红包",
       "bare": "https://mo.m.taobao.com/etao2/page_1754537425943?ep=bpTovMIXJfY&taskId=11648&etao_biz_cooperation=H0HwxDeCvA%2F54Zos%2BPr3Jtgq5Ap4OynouGY%2FkaPRqzg%3D",
       "asac": "2A216088LD6TNDJO5XW1UY",
       "id": 89609
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94442&sceneId=5365&implId=other_1390_2961012_94442_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 12,
-      "n": "淘金币趣味课堂",
-      "bare": "https://pages.tmall.com/wow/z/tmtjb/tjbSSR/taocoin-question?disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&forceTheims=true&awardType=COIN",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 94442
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=106046&sceneId=5365&implId=other_1390_3414001_106046_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 12,
-      "n": "拍立淘逛感兴趣的宝贝",
-      "bare": "https://h5.m.taobao.com/tusou/image_editor/index.html?pssource=tmtjb&photofrom=tmtjb&useNewFramework=true&lockOverlay=true&prismChannel=poplayer",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 106046
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=106046&sceneId=5365&implId=other_1390_3414001_106046_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 12,
-      "n": "拍立淘逛感兴趣的宝贝",
-      "bare": "https://h5.m.taobao.com/tusou/image_editor/index.html?pssource=tmtjb&photofrom=tmtjb&useNewFramework=true&lockOverlay=true&prismChannel=poplayer",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 106046
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=106046&sceneId=5365&implId=other_1390_3414001_106046_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 12,
-      "n": "拍立淘逛感兴趣的宝贝",
-      "bare": "https://h5.m.taobao.com/tusou/image_editor/index.html?pssource=tmtjb&photofrom=tmtjb&useNewFramework=true&lockOverlay=true&prismChannel=poplayer",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 106046
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=106046&sceneId=5365&implId=other_1390_3414001_106046_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 12,
-      "n": "拍立淘逛感兴趣的宝贝",
-      "bare": "https://h5.m.taobao.com/tusou/image_editor/index.html?pssource=tmtjb&photofrom=tmtjb&useNewFramework=true&lockOverlay=true&prismChannel=poplayer",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 106046
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=106046&sceneId=5365&implId=other_1390_3414001_106046_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 12,
-      "n": "拍立淘逛感兴趣的宝贝",
-      "bare": "https://h5.m.taobao.com/tusou/image_editor/index.html?pssource=tmtjb&photofrom=tmtjb&useNewFramework=true&lockOverlay=true&prismChannel=poplayer",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 106046
      }
     ]
    }
   }
  },
- "_mine": "scene 5365 日常版；任务 5 个 / 9 步；生成时间见文件头。排除：支付宝4、饿了么1、duanqu1、下单1、拉人1、小游戏1、拍立淘404、process组1、签到1(页面自动)。 生成于 2026-10-22"
+ "_mine": "scene 5365 日常版；任务 2 个 / 2 步；生成时间见文件头。排除：支付宝4、饿了么1、duanqu1、下单1、拉人1、小游戏1、拍立淘404、process组1、签到1(页面自动)。 生成于 2026-10-22"
 }

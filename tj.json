@@ -29,7 +29,7 @@
    },
    "📊今日任务数": {
     "type": "text",
-    "value": "本次共 21 步（11 个任务）"
+    "value": "本次共 19 步（9 个任务）"
    }
   },
   "taskList": [
@@ -54,15 +54,7 @@
     "before": [],
     "item": [
      {
-      "u": "https://pages.tmall.com/wow/z/tmtjb/tjbSSR/taocoin-deduct-radarpage?x-ssr=true&disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&x-sec=wua&asac=2A24419HDF65FYXCCXZ5LE&forceThemis=true&hd_from=cointask&prismChannel=poplayer&largescreenstyle=fullscreen&deliveryId=107861&sceneId=5365&hd_from_id=100089&implId=other_1390_3493009_107861_0",
-      "w": 22,
-      "n": "你关注的商品都可抵",
-      "bare": "https://pages.tmall.com/wow/z/tmtjb/tjbSSR/taocoin-deduct-radarpage?x-ssr=true&disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&x-sec=wua&asac=2A24419HDF65FYXCCXZ5LE&forceThemis=true&hd_from=cointask&prismChannel=poplayer&largescreenstyle=fullscreen",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 107861
-     },
-     {
-      "u": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214&deliveryId=94046&sceneId=5365&hd_from_id=100089&implId=other_1390_0_94046_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94046&sceneId=5365&implId=other_1390_0_94046_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "浏览心仪好物",
       "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
@@ -70,7 +62,7 @@
       "id": 94046
      },
      {
-      "u": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214&deliveryId=94046&sceneId=5365&hd_from_id=100089&implId=other_1390_0_94046_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94046&sceneId=5365&implId=other_1390_0_94046_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "浏览心仪好物",
       "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
@@ -78,7 +70,7 @@
       "id": 94046
      },
      {
-      "u": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214&deliveryId=94046&sceneId=5365&hd_from_id=100089&implId=other_1390_0_94046_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94046&sceneId=5365&implId=other_1390_0_94046_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "浏览心仪好物",
       "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
@@ -86,7 +78,7 @@
       "id": 94046
      },
      {
-      "u": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214&deliveryId=92801&sceneId=5365&hd_from_id=100089&implId=other_1390_0_92801_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=92801&sceneId=5365&implId=other_1390_0_92801_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "浏览心仪好物",
       "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
@@ -94,7 +86,7 @@
       "id": 92801
      },
      {
-      "u": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214&deliveryId=92801&sceneId=5365&hd_from_id=100089&implId=other_1390_0_92801_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=92801&sceneId=5365&implId=other_1390_0_92801_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "浏览心仪好物",
       "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
@@ -102,7 +94,7 @@
       "id": 92801
      },
      {
-      "u": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214&deliveryId=92801&sceneId=5365&hd_from_id=100089&implId=other_1390_0_92801_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=92801&sceneId=5365&implId=other_1390_0_92801_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "浏览心仪好物",
       "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
@@ -110,7 +102,7 @@
       "id": 92801
      },
      {
-      "u": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214&deliveryId=92801&sceneId=5365&hd_from_id=100089&implId=other_1390_0_92801_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=92801&sceneId=5365&implId=other_1390_0_92801_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "浏览心仪好物",
       "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
@@ -118,20 +110,12 @@
       "id": 92801
      },
      {
-      "u": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214&deliveryId=92801&sceneId=5365&hd_from_id=100089&implId=other_1390_0_92801_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=92801&sceneId=5365&implId=other_1390_0_92801_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "浏览心仪好物",
       "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
       "asac": "2A216088LD6TNDJO5XW1UY",
       "id": 92801
-     },
-     {
-      "u": "https://pages-fast.m.taobao.com/wow/z/tmtjb/tjbSSR/taocoin-new-recommend?x-ssr=true&disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&x-sec=wua&asac=2A24419HDF65FYXCCXZ5LE&forceThemis=true&hd_from=task&spmb=recommend_88vip&themeId=334&prismChannel=poplayer&deliveryId=105890&sceneId=5365&hd_from_id=100089&implId=other_1390_3384007_105890_0",
-      "w": 12,
-      "n": "逛88VIP会员甄选频道",
-      "bare": "https://pages-fast.m.taobao.com/wow/z/tmtjb/tjbSSR/taocoin-new-recommend?x-ssr=true&disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&x-sec=wua&asac=2A24419HDF65FYXCCXZ5LE&forceThemis=true&hd_from=task&spmb=recommend_88vip&themeId=334&prismChannel=poplayer",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 105890
      },
      {
       "u": "https://pages.tmall.com/wow/z/tmtjb/tjbSSR/taocoin-question?disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&forceTheims=true&awardType=COIN&deliveryId=94442&sceneId=5365&hd_from_id=100089&implId=other_1390_2961012_94442_0",
@@ -150,7 +134,7 @@
       "id": 81053
      },
      {
-      "u": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214&deliveryId=94055&sceneId=5365&hd_from_id=100089&implId=other_1390_0_94055_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94055&sceneId=5365&implId=other_1390_0_94055_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "浏览心仪好物",
       "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
@@ -158,7 +142,7 @@
       "id": 94055
      },
      {
-      "u": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214&deliveryId=94055&sceneId=5365&hd_from_id=100089&implId=other_1390_0_94055_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94055&sceneId=5365&implId=other_1390_0_94055_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "浏览心仪好物",
       "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
@@ -166,7 +150,7 @@
       "id": 94055
      },
      {
-      "u": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214&deliveryId=94055&sceneId=5365&hd_from_id=100089&implId=other_1390_0_94055_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94055&sceneId=5365&implId=other_1390_0_94055_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
       "n": "浏览心仪好物",
       "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
@@ -182,32 +166,32 @@
       "id": 89609
      },
      {
-      "u": "https://pages-fast.m.taobao.com/wow/z/tblife/achievement-i/JX4ezmspfN8txPMWyawe?x-ssr=true&disableNav=YES&status_bar_transparent=true&_ali_full_screen_=true&disableProgress=true&tao_mini_h5=true&uniapp_id=1012454&uniapp_page=home&from=tjbnew&prismChannel=poplayer&deliveryId=88969&sceneId=5365&hd_from_id=100089&implId=count_1390_3124014_88969_0",
-      "w": 12,
-      "n": "天天签到免费拿IP周边",
-      "bare": "https://pages-fast.m.taobao.com/wow/z/tblife/achievement-i/JX4ezmspfN8txPMWyawe?x-ssr=true&disableNav=YES&status_bar_transparent=true&_ali_full_screen_=true&disableProgress=true&tao_mini_h5=true&uniapp_id=1012454&uniapp_page=home&from=tjbnew&prismChannel=poplayer",
+      "u": "https://market.m.taobao.com/app/tb-zhibo-app/callapp-mid-center/home.html?bizCode=taojinbilahuo-2&deliveryId=80330&fromSource=55&deliveryId=80330&sceneId=5365&hd_from_id=100089&implId=other_1390_2487017_80330_0",
+      "w": 15,
+      "n": "去淘宝直播提现",
+      "bare": "https://market.m.taobao.com/app/tb-zhibo-app/callapp-mid-center/home.html?bizCode=taojinbilahuo-2&deliveryId=80330&fromSource=55",
       "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 88969
+      "id": 80330
      },
      {
-      "u": "https://pages.tmall.com/wow/a/act/tmall/dailyact/20280/20940/wupr?wh_pid=dailyAct-524372&disableNav=YES&status_bar_transparent=true&subSource=tjbtfdx&prismChannel=poplayer&prismChannel=poplayer&deliveryId=65214&sceneId=5365&hd_from_id=100089&implId=count_1390_1947006_65214_0",
+      "u": "https://pages-fast.m.taobao.com/wow/z/app/wt/hym/home?x-ssr=true&disableNav=YES&subSource=taojinbi&x-preload=true&disableNav=YES&prismChannel=poplayer&deliveryId=68042&sceneId=5365&hd_from_id=100089&implId=other_1390_2004036_68042_0",
       "w": 12,
-      "n": "充话费0元起！",
-      "bare": "https://pages.tmall.com/wow/a/act/tmall/dailyact/20280/20940/wupr?wh_pid=dailyAct-524372&disableNav=YES&status_bar_transparent=true&subSource=tjbtfdx&prismChannel=poplayer&prismChannel=poplayer",
+      "n": "养小羊免费赚话费",
+      "bare": "https://pages-fast.m.taobao.com/wow/z/app/wt/hym/home?x-ssr=true&disableNav=YES&subSource=taojinbi&x-preload=true&disableNav=YES&prismChannel=poplayer",
       "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 65214
+      "id": 68042
      },
      {
-      "u": "https://pages-fast.m.taobao.com/wow/z/tmtjb/tjbSSR/taocoin-new-recommend?x-ssr=true&disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&x-sec=wua&asac=2A24419HDF65FYXCCXZ5LE&forceThemis=true&hd_from=pinpailogo&spmb=recommend_xianhuayuanyi&themeId=576&prismChannel=poplayer&deliveryId=106632&sceneId=5365&hd_from_id=100089&implId=other_1390_3497006_106632_0",
+      "u": "https://pages-fast.m.taobao.com/wow/z/tmtjb/tjbSSR/shop-list?x-ssr=true&disableNav=YES&forceThemis=true&hd_from=taocoinTaskList&prismChannel=poplayer&deliveryId=67396&sceneId=5365&hd_from_id=100089&implId=other_1390_2017005_67396_0",
       "w": 12,
-      "n": "鲜花园艺爆款超能抵",
-      "bare": "https://pages-fast.m.taobao.com/wow/z/tmtjb/tjbSSR/taocoin-new-recommend?x-ssr=true&disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&x-sec=wua&asac=2A24419HDF65FYXCCXZ5LE&forceThemis=true&hd_from=pinpailogo&spmb=recommend_xianhuayuanyi&themeId=576&prismChannel=poplayer",
+      "n": "逛好店赚一大波金币",
+      "bare": "https://pages-fast.m.taobao.com/wow/z/tmtjb/tjbSSR/shop-list?x-ssr=true&disableNav=YES&forceThemis=true&hd_from=taocoinTaskList&prismChannel=poplayer",
       "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 106632
+      "id": 67396
      }
     ]
    }
   }
  },
- "_mine": "scene 5365 日常版；任务 11 个 / 19 步；生成时间见文件头。排除：支付宝4、饿了么1、duanqu1、下单1、拉人1、小游戏1、拍立淘404、process组1、签到1(页面自动)。 生成于 2026-10-22 18:33:59"
+ "_mine": "scene 5365 日常版；任务 9 个 / 17 步；生成时间见文件头。排除：支付宝4、饿了么1、duanqu1、下单1、拉人1、小游戏1、拍立淘404、process组1、签到1(页面自动)。 生成于 2026-10-22 20:45:41"
 }

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>双11 配置看板</title>
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#ffffff; --line:#e6e8ec; --text:#1b1f24; --sub:#6b7280;
+    --blue:#2f6bff; --blue-soft:#eef3ff; --red:#d92d20; --red-soft:#fef3f2;
+    --green:#0a8f4d; --green-soft:#ecfdf3; --amber:#b45309; --amber-soft:#fffaeb;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--text);
+    font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    padding:16px 14px 48px; max-width:960px; margin:0 auto;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+  h1{font-size:19px;margin:0 0 3px;letter-spacing:.2px}
+  .sub{color:var(--sub);font-size:12px}
+  .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#bbb;margin-right:5px;vertical-align:1px}
+  .dot.ok{background:var(--green)} .dot.bad{background:var(--red)} .dot.wait{background:var(--amber)}
+  .pill{
+    font-size:11px;padding:3px 9px;border-radius:999px;background:#eef0f3;color:var(--sub);
+    white-space:nowrap;line-height:1.7
+  }
+  .pill.ok{background:var(--green-soft);color:var(--green)}
+  .pill.bad{background:var(--red-soft);color:var(--red)}
+  .pill.wait{background:var(--amber-soft);color:var(--amber)}
+
+  .tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+  .tab{
+    flex:1 1 150px;min-width:130px;text-align:left;cursor:pointer;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:10px 13px;transition:.15s;font:inherit;color:inherit;
+  }
+  .tab:hover{border-color:#cfd6e4}
+  .tab.on{border-color:var(--blue);background:var(--blue-soft);box-shadow:0 0 0 1px var(--blue) inset}
+  .tab b{display:block;font-size:14px;margin-bottom:2px}
+  .tab span{font-size:11px;color:var(--sub)}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 15px;margin-bottom:12px}
+  .card h2{font-size:13px;margin:0 0 11px;color:var(--sub);font-weight:600;letter-spacing:.4px;display:flex;justify-content:space-between;align-items:center}
+  .card h2 em{font-style:normal;font-weight:400;font-size:11px;color:#9aa0aa}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:10px}
+  .kv{background:#fafbfc;border-radius:10px;padding:9px 11px}
+  .kv i{display:block;font-style:normal;font-size:11px;color:var(--sub);margin-bottom:2px}
+  .kv b{font-size:16px;font-weight:600;letter-spacing:.3px}
+  .kv b.small{font-size:12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+  .taskrow{display:flex;align-items:center;gap:9px;padding:7px 2px;border-bottom:1px dashed #eef0f3;font-size:13px}
+  .taskrow:last-child{border-bottom:0}
+  .tid{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;min-width:78px;color:#374151}
+  .tname{flex:1;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .tcnt{font-size:11px;color:var(--sub);background:#f2f4f7;border-radius:6px;padding:1px 7px}
+  .tag{font-size:10.5px;padding:1px 7px;border-radius:6px;white-space:nowrap}
+  .tag.no{background:var(--red-soft);color:var(--red)}
+  .tag.crowd{background:var(--amber-soft);color:var(--amber)}
+  .tag.expired{background:#f2f4f7;color:#6b7280}
+  .taskrow.dead{opacity:.92}
+  .taskrow.dead .tname{color:#9aa0aa;text-decoration:line-through}
+
+  .empty{color:var(--sub);font-size:12.5px;padding:10px 2px}
+  .err{
+    background:var(--red-soft);border:1px solid #fecdca;color:#912018;
+    border-radius:10px;padding:10px 12px;font-size:12.5px;line-height:1.65
+  }
+  .err b{display:block;margin-bottom:3px}
+  .btn{
+    font:inherit;font-size:12.5px;padding:6px 14px;border-radius:9px;cursor:pointer;
+    border:1px solid var(--line);background:#fff;color:var(--text);transition:.15s
+  }
+  .btn:hover{background:#f7f8fa}
+  .btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+  .btn.primary:hover{background:#2a5fe0}
+  .btn:disabled{opacity:.55;cursor:default}
+
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th{text-align:left;color:var(--sub);font-weight:500;padding:6px 8px 6px 0;border-bottom:1px solid var(--line);font-size:11.5px}
+  td{padding:7px 8px 7px 0;border-bottom:1px dashed #eef0f3;vertical-align:top}
+  tr:last-child td{border-bottom:0}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px}
+
+  footer{color:#9aa0aa;font-size:11.5px;text-align:center;line-height:1.8;margin-top:20px}
+  .banner{
+    background:var(--amber-soft);border:1px solid #fedf89;color:#93370d;border-radius:12px;
+    padding:11px 13px;font-size:12.5px;margin-bottom:13px;line-height:1.7
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>双11 配置看板</h1>
+    <div class="sub">淘宝 1111 快捷指令 · 云端配置与实测记录</div>
+  </div>
+  <div style="text-align:right">
+    <div class="pill" id="cloudState"><span class="dot wait"></span>连接中</div>
+  </div>
+</header>
+
+<div id="banner"></div>
+
+<div class="tabs" id="tabs"></div>
+
+<div class="card">
+  <h2>当前配置 <em id="snapWhen"></em></h2>
+  <div class="grid" id="snapGrid"></div>
+</div>
+
+<div class="card">
+  <h2>任务清单 <em id="taskHint"></em></h2>
+  <div id="taskList"><div class="empty">加载中…</div></div>
+</div>
+
+<div class="card">
+  <h2>今日实测 <em id="checkWhen"></em></h2>
+  <div id="checkList"><div class="empty">加载中…</div></div>
+</div>
+
+<div class="card">
+  <h2>版本历史 <em>cfg_snapshots</em></h2>
+  <div id="history"><div class="empty">加载中…</div></div>
+</div>
+
+<div class="card">
+  <h2>下发记录 <em>sync_runs</em></h2>
+  <div id="syncs"><div class="empty">加载中…</div></div>
+</div>
+
+<footer>
+  <button class="btn primary" id="reload">重新加载</button>
+  <div style="margin-top:10px">数据来自云数据库，非本地缓存</div>
+</footer>
+
+<script>
+/* publicConfig —— 由云服务开通时下发，是唯一可安全放进前端的凭据 */
+const PUBLIC_CONFIG = {
+  endpoint: 'https://tb1111-cfg2.app.workbuddy.host',
+  oauthRelayBaseUrl: 'https://www.workbuddy.cn/v2/as/genie-baas/oauth',
+  publishableKey: 'wbpk_bwhedCHq8N2jboQQfR1PQi_93X2aNS2zMablfJ0jm7RqbTfBjQN7NsY'
+};
+
+const SCENES = [
+  { id: '8917', name: '双11能量场景赛车', hint: 'A 指令 · 淘宝主站任务' },
+  { id: '9647', name: '寻宝中国', hint: 'B 指令 · 直播任务' }
+];
+
+const STATUS_LABEL = {
+  no_count: { cls: 'no', text: '跑不通' },
+  crowd: { cls: 'crowd', text: '人群不符' },
+  expired: { cls: 'expired', text: '已下架' },
+  ok: { cls: 'expired', text: '有效' }
+};
+
+let cloud = null;
+let active = '8917';
+let cache = { snapshots: [], checks: [], syncs: [] };
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+function fmtTime(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (isNaN(d)) return iso;
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+function todayStr() {
+  const d = new Date(), p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+/* ---------- SDK 加载（主 CDN 失败自动换备用） ---------- */
+function loadSDK() {
+  return new Promise((resolve, reject) => {
+    if (window.WorkBuddyCloud) return resolve();
+    const urls = [
+      'https://fastly.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js',
+      'https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js'
+    ];
+    let i = 0;
+    const next = () => {
+      if (i >= urls.length) return reject(new Error('云 SDK 加载失败：两个 CDN 都不可达'));
+      const s = document.createElement('script');
+      s.src = urls[i++];
+      s.onload = () => window.WorkBuddyCloud ? resolve() : next();
+      s.onerror = () => { s.remove(); next(); };
+      document.head.appendChild(s);
+    };
+    next();
+  });
+}
+
+function setCloudState(kind, text) {
+  const el = $('cloudState');
+  el.className = 'pill ' + kind;
+  el.innerHTML = `<span class="dot ${kind === 'ok' ? 'ok' : kind === 'bad' ? 'bad' : 'wait'}"></span>${esc(text)}`;
+}
+
+function showBanner(html) {
+  const b = $('banner');
+  if (!html) { b.innerHTML = ''; return; }
+  b.innerHTML = `<div class="banner">${html}</div>`;
+}
+
+/* ---------- 数据拉取 ---------- */
+async function fetchAll() {
+  if (!cloud) throw new Error('云服务客户端未初始化');
+
+  const snap = await cloud.database.from('cfg_snapshots')
+    .select('id, scene, scene_name, item_count, task_count, sha256, items, source, note, created_at')
+    .order('created_at', { ascending: false })
+    .limit(30);
+  if (snap.error) throw new Error('配置快照读取失败：' + (snap.error.message || snap.error.code || '未知错误'));
+
+  const chk = await cloud.database.from('task_checks')
+    .select('delivery_id, scene, task_name, status, detail, checked_on, created_at')
+    .order('checked_on', { ascending: false })
+    .limit(300);
+  if (chk.error) throw new Error('实测记录读取失败：' + (chk.error.message || chk.error.code || '未知错误'));
+
+  const sync = await cloud.database.from('sync_runs')
+    .select('scene, target, sha256, bytes, ok, message, created_at')
+    .order('created_at', { ascending: false })
+    .limit(12);
+  if (sync.error) throw new Error('下发记录读取失败：' + (sync.error.message || sync.error.code || '未知错误'));
+
+  cache.snapshots = snap.data || [];
+  cache.checks = chk.data || [];
+  cache.syncs = sync.data || [];
+}
+
+/* ---------- 渲染 ---------- */
+function latestSnap(scene) {
+  return cache.snapshots.find(s => s.scene === scene) || null;
+}
+
+function parseItems(str) {
+  const out = [];
+  if (!str) return out;
+  const re = /([0-9]+(?: [0-9]+)?)x([0-9]+)/g;
+  let m;
+  while ((m = re.exec(str))) out.push({ raw: m[1], id: m[1].split(' ')[0], n: parseInt(m[2], 10) });
+  return out;
+}
+
+function renderTabs() {
+  $('tabs').innerHTML = SCENES.map(s => {
+    const snap = latestSnap(s.id);
+    return `<button class="tab ${s.id === active ? 'on' : ''}" data-scene="${s.id}">
+      <b>${esc(s.name)}</b>
+      <span>${snap ? esc(snap.item_count + ' 条 / ' + snap.task_count + ' 任务') : '暂无快照'} · ${esc(s.hint)}</span>
+    </button>`;
+  }).join('');
+  $('tabs').querySelectorAll('.tab').forEach(b => {
+    b.onclick = () => { active = b.dataset.scene; renderAll(); };
+  });
+}
+
+function renderSnapshot() {
+  const snap = latestSnap(active);
+  if (!snap) {
+    $('snapGrid').innerHTML = `<div class="empty">这个场景还没有配置快照</div>`;
+    $('snapWhen').textContent = '';
+    return;
+  }
+  $('snapWhen').textContent = fmtTime(snap.created_at);
+  $('snapGrid').innerHTML = `
+    <div class="kv"><i>配置条数</i><b>${snap.item_count}</b></div>
+    <div class="kv"><i>任务个数</i><b>${snap.task_count}</b></div>
+    <div class="kv"><i>来源</i><b class="small">${esc(snap.source || '-')}</b></div>
+    <div class="kv" style="grid-column:span 2"><i>文件指纹 sha256</i><b class="small">${esc(String(snap.sha256 || '').slice(0, 24))}…</b></div>
+  `;
+}
+
+function renderTasks() {
+  const snap = latestSnap(active);
+  const list = $('taskList');
+  if (!snap) { list.innerHTML = `<div class="empty">没有可展示的任务清单</div>`; $('taskHint').textContent = ''; return; }
+
+  const items = parseItems(snap.items);
+  const today = todayStr();
+  const byId = {};
+  cache.checks.filter(c => c.scene === active && c.checked_on === today).forEach(c => { byId[c.delivery_id] = c; });
+
+  const deadCount = items.filter(it => { const c = byId[it.id]; return c && c.status !== 'ok'; }).length;
+  $('taskHint').textContent = `${items.length} 个任务${deadCount ? ' · ' + deadCount + ' 个今日实测跑不通' : ''}`;
+
+  if (!items.length) { list.innerHTML = `<div class="empty">任务清单为空</div>`; return; }
+
+  list.innerHTML = items.map(it => {
+    const c = byId[it.id];
+    const dead = c && c.status !== 'ok';
+    const st = c ? STATUS_LABEL[c.status] || { cls: 'expired', text: c.status } : null;
+    return `<div class="taskrow ${dead ? 'dead' : ''}">
+      <span class="tid">${esc(it.raw)}</span>
+      <span class="tname">${esc(c && c.task_name ? c.task_name : '—')}</span>
+      ${st ? `<span class="tag ${st.cls}">${esc(st.text)}</span>` : ''}
+      <span class="tcnt">×${it.n}</span>
+    </div>`;
+  }).join('');
+}
+
+function renderChecks() {
+  const today = todayStr();
+  const rows = cache.checks.filter(c => c.scene === active && c.checked_on === today);
+  $('checkWhen').textContent = today;
+  if (!rows.length) {
+    $('checkList').innerHTML = `<div class="empty">今天还没有这个场景的实测记录</div>`;
+    return;
+  }
+  const order = { no_count: 0, crowd: 1, expired: 2, ok: 3 };
+  rows.sort((a, b) => (order[a.status] ?? 9) - (order[b.status] ?? 9));
+  $('checkList').innerHTML = rows.map(c => {
+    const st = STATUS_LABEL[c.status] || { cls: 'expired', text: c.status };
+    return `<div class="taskrow">
+      <span class="tid">${esc(c.delivery_id)}</span>
+      <span class="tname">${esc(c.task_name || '—')}<br><span style="font-size:11px;color:#9aa0aa">${esc(c.detail || '')}</span></span>
+      <span class="tag ${st.cls}">${esc(st.text)}</span>
+    </div>`;
+  }).join('');
+}
+
+function renderHistory() {
+  const rows = cache.snapshots.filter(s => s.scene === active);
+  if (!rows.length) { $('history').innerHTML = `<div class="empty">暂无版本记录</div>`; return; }
+  $('history').innerHTML = `<table><thead><tr>
+      <th style="width:112px">时间</th><th style="width:64px">条数</th><th style="width:58px">任务</th><th>指纹</th>
+    </tr></thead><tbody>${rows.map(s => `<tr>
+      <td class="mono">${esc(fmtTime(s.created_at))}</td>
+      <td>${s.item_count}</td>
+      <td>${s.task_count}</td>
+      <td class="mono" title="${esc(s.sha256)}">${esc(String(s.sha256).slice(0, 12))}</td>
+    </tr>`).join('')}</tbody></table>`;
+}
+
+function renderSyncs() {
+  const rows = cache.syncs;
+  if (!rows.length) { $('syncs').innerHTML = `<div class="empty">暂无下发记录</div>`; return; }
+  $('syncs').innerHTML = `<table><thead><tr>
+      <th style="width:74px">场景</th><th>目标 / 结果</th><th style="width:104px">时间</th>
+    </tr></thead><tbody>${rows.map(s => `<tr>
+      <td>${esc(s.scene)}</td>
+      <td>${esc(s.target)} <span class="tag ${s.ok ? 'expired' : 'no'}">${s.ok ? '成功' : '失败'}</span>
+          <br><span style="font-size:11px;color:#9aa0aa">${esc(s.message || '')}</span></td>
+      <td class="mono">${esc(fmtTime(s.created_at))}</td>
+    </tr>`).join('')}</tbody></table>`;
+}
+
+function renderAll() {
+  renderTabs();
+  renderSnapshot();
+  renderTasks();
+  renderChecks();
+  renderHistory();
+  renderSyncs();
+}
+
+/* ---------- 主流程 ---------- */
+async function boot() {
+  $('reload').disabled = true;
+  setCloudState('wait', '连接中');
+  showBanner('');
+  try {
+    await loadSDK();
+  } catch (e) {
+    setCloudState('bad', 'SDK 未加载');
+    showBanner(`<b>云 SDK 加载失败</b>${esc(e.message)}。页面依赖 CDN，请检查网络后点「重新加载」。`);
+    $('reload').disabled = false;
+    return;
+  }
+
+  try {
+    cloud = WorkBuddyCloud.createWorkBuddyCloud({
+      endpoint: PUBLIC_CONFIG.endpoint,
+      oauthRelayBaseUrl: PUBLIC_CONFIG.oauthRelayBaseUrl,
+      publishableKey: PUBLIC_CONFIG.publishableKey
+    });
+  } catch (e) {
+    setCloudState('bad', '初始化失败');
+    showBanner(`<b>云服务客户端初始化失败</b>${esc(e.message || e)}`);
+    $('reload').disabled = false;
+    return;
+  }
+
+  try {
+    await fetchAll();
+    setCloudState('ok', '云端已连接');
+    renderAll();
+  } catch (e) {
+    setCloudState('bad', '读取失败');
+    renderAll();
+    const msg = String(e.message || e);
+    const isNet = /fetch|network|Failed to fetch|ENOTFOUND|abort/i.test(msg);
+    showBanner(`<b>${isNet ? '连不上云服务' : '读取云端数据失败'}</b>${esc(msg)}<br>
+      ${isNet ? '常见原因：网络不通、域名解析失败，或本页不是从发布域名打开（云服务按域名做来源校验）。' : ''}`);
+  } finally {
+    $('reload').disabled = false;
+  }
+}
+
+$('reload').onclick = boot;
+boot();
+</script>
+</body>
+</html>

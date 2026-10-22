@@ -1,6 +1,6 @@
 {
  "activity": {
-  "tip": "日常版淘金币\n----------------\n开始后自动按清单逐个打开任务页，中途别锁屏\n跑完回金币小镇看金币到账\n----------------\n如果打开的是双11赛车页面，点右上角「回日常版」再跑",
+  "tip": "日常版淘金币（4 批 / 共 15 步）\n----------------\n先点第 1 批，跑完回来再点第 2 批，一批一批来\n中途别锁屏，跑完回金币小镇看金币到账\n----------------\n如果打开的是双11赛车页面，点右上角「回日常版」再跑",
   "vvv": 1,
   "mine": {
    "help": "",
@@ -9,16 +9,37 @@
    "pv": ""
   },
   "list": [
-   "❤️开始日常任务❤️",
+   "❤️第1批·4步❤️",
+   "❤️第2批·3步❤️",
+   "❤️第3批·4步❤️",
+   "❤️第4批·4步❤️",
    "📅打开金币小镇(日常版)",
    "🏎️去双11赛车",
    "📊今日任务数"
   ],
   "mapping": {
-   "❤️开始日常任务❤️": {
+   "❤️第1批·4步❤️": {
     "type": "task",
     "key": [
-     "日常任务"
+     "日常任务1"
+    ]
+   },
+   "❤️第2批·3步❤️": {
+    "type": "task",
+    "key": [
+     "日常任务2"
+    ]
+   },
+   "❤️第3批·4步❤️": {
+    "type": "task",
+    "key": [
+     "日常任务3"
+    ]
+   },
+   "❤️第4批·4步❤️": {
+    "type": "task",
+    "key": [
+     "日常任务4"
     ]
    },
    "📅打开金币小镇(日常版)": {
@@ -29,11 +50,14 @@
    },
    "📊今日任务数": {
     "type": "text",
-    "value": "本次共 19 步（16 个任务）"
+    "value": "共 4 批 / 14 个任务 / 23 步"
    }
   },
   "taskList": [
-   "日常任务"
+   "日常任务1",
+   "日常任务2",
+   "日常任务3",
+   "日常任务4"
   ]
  },
  "taskData": {
@@ -41,11 +65,11 @@
   "common": {
    "url": "https://gh-proxy.com/https://raw.githubusercontent.com/2604237845/tb1111-cfg/main/tj.js"
   },
-  "日常任务": {
+  "日常任务1": {
    "type": "task",
    "main": "https://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?sceneId=5365&hd_from=lmch_rc",
    "endpage": "https://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?sceneId=5365&hd_from=lmch_rc",
-   "endMessage": "日常任务结束",
+   "endMessage": "第1批结束",
    "task": {
     "tag": "daily",
     "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
@@ -84,7 +108,22 @@
       "bare": "alipays://platformapi/startapp?appId=20000067&sceneCode=KF_HZHD&chInfo=ch_taobao&subSceneCode=taobaogolden_antforest_0118&pikshemo=YES&url=https%3A%2F%2Frender.alipay.com%2Fp%2Fc%2F180020570000012230%2Findex.html%3F%26df%3Dparams%26sceneCode%3Dtaobaogolden_antforest_0118%26chInfo%3Dch_taobao%26channel%3D4%26deliveryId%3D:deliveryId:%26sceneId%3D:sceneId:%26implId%3D:implId:%26fromToken%3D:fromToken:",
       "asac": "2A216088LD6TNDJO5XW1UY",
       "id": 65274
-     },
+     }
+    ]
+   }
+  },
+  "日常任务2": {
+   "type": "task",
+   "main": "https://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?sceneId=5365&hd_from=lmch_rc",
+   "endpage": "https://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?sceneId=5365&hd_from=lmch_rc",
+   "endMessage": "第2批结束",
+   "task": {
+    "tag": "daily",
+    "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
+    "baseurl": "",
+    "wait": 12,
+    "before": [],
+    "item": [
      {
       "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=65773&sceneId=5365&implId=other_1390_1977004_65773_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 20,
@@ -108,7 +147,22 @@
       "bare": "alipays://platformapi/startapp?appId=68687599&source=2026_taocoin_yqs&chInfo=2026_taocoin_yqs",
       "asac": "2A216088LD6TNDJO5XW1UY",
       "id": 79268
-     },
+     }
+    ]
+   }
+  },
+  "日常任务3": {
+   "type": "task",
+   "main": "https://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?sceneId=5365&hd_from=lmch_rc",
+   "endpage": "https://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?sceneId=5365&hd_from=lmch_rc",
+   "endMessage": "第3批结束",
+   "task": {
+    "tag": "daily",
+    "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
+    "baseurl": "",
+    "wait": 12,
+    "before": [],
+    "item": [
      {
       "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=87671&sceneId=5365&implId=other_1390_1_87671_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
@@ -140,7 +194,22 @@
       "bare": "alipays://platformapi/startapp?appId=20000067&url=https%3A%2F%2Fpages.tmall.com%2Fwow%2Fz%2Fhdwk%2Falipayfarm%2Fcountry%3Ftype%3Dvisit%26source%3Dtaocoin%26__webview_options__%3DreadTitle%253DNO%2526ttb%253Dauto%2526bc%253D5220925",
       "asac": "2A216088LD6TNDJO5XW1UY",
       "id": 94026
-     },
+     }
+    ]
+   }
+  },
+  "日常任务4": {
+   "type": "task",
+   "main": "https://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?sceneId=5365&hd_from=lmch_rc",
+   "endpage": "https://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?sceneId=5365&hd_from=lmch_rc",
+   "endMessage": "第4批结束",
+   "task": {
+    "tag": "daily",
+    "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
+    "baseurl": "",
+    "wait": 12,
+    "before": [],
+    "item": [
      {
       "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=102513&sceneId=5365&implId=other_1390_3226017_102513_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
@@ -166,26 +235,10 @@
       "id": 104787
      },
      {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=80330&sceneId=5365&implId=other_1390_2487017_80330_0&asac=2A216088LD6TNDJO5XW1UY",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=103338&sceneId=5365&implId=other_1390_3352004_103338_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
-      "n": "去淘宝直播提现",
-      "bare": "https://market.m.taobao.com/app/tb-zhibo-app/callapp-mid-center/home.html?bizCode=taojinbilahuo-2&deliveryId=80330&fromSource=55",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 80330
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=89609&sceneId=5365&implId=other_1390_2732004_89609_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 15,
-      "n": "点击商品领优惠红包",
-      "bare": "https://mo.m.taobao.com/etao2/page_1754537425943?ep=bpTovMIXJfY&taskId=11648&etao_biz_cooperation=H0HwxDeCvA%2F54Zos%2BPr3Jtgq5Ap4OynouGY%2FkaPRqzg%3D",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 89609
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=103338&sceneId=5365&implId=other_1390_3267022_103338_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 15,
-      "n": "玩三国冰河时代游戏",
-      "bare": "https://m.duanqu.com?_ariver_appid=3000000132997253&_mp_code=tb&_container_type=gm&hdkf_from=coin666",
+      "n": "玩一玩修仙小游戏",
+      "bare": "https://m.duanqu.com?_ariver_appid=3000000108553215&_mp_code=tb&_container_type=gm&hdkf_from=coin666",
       "asac": "2A216088LD6TNDJO5XW1UY",
       "id": 103338
      }
@@ -193,5 +246,5 @@
    }
   }
  },
- "_mine": "scene 5365 日常版；任务 16 个 / 17 步；全程走浮层页。收 SYSTEM_SWITCH/EXCUTE 跨端类（浮层页不执行 action，只看 status==ACCEPTED）。排除：下单/拉人/分享类、无 action 的疑似测试任务。 生成于 2026-10-22"
+ "_mine": "scene 5365 日常版；14 个任务 / 4 批 / 15 步；全程走浮层页。收 SYSTEM_SWITCH/EXCUTE 跨端类（浮层页不执行 action，只看 status==ACCEPTED）。分批：一次性 19 步会让快捷指令秒退（10-22 实测）。"
 }

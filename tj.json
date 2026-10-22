@@ -29,7 +29,7 @@
    },
    "📊今日任务数": {
     "type": "text",
-    "value": "本次共 13 步（5 个任务）"
+    "value": "本次共 19 步（11 个任务）"
    }
   },
   "taskList": [
@@ -54,76 +54,28 @@
     "before": [],
     "item": [
      {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=95180&sceneId=5365&implId=other_1390_0_95180_0&asac=2A216088LD6TNDJO5XW1UY",
+      "u": "https://market.m.taobao.com/app/tb-zhibo-app/callapp-mid-center/home.html?bizCode=taojinbilahuo-2&fromSource=55&deliveryId=80330&sceneId=5365&hd_from_id=100089&implId=other_1390_2487017_80330_0",
       "w": 15,
-      "n": "浏览超多好物",
-      "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
+      "n": "去淘宝直播提现",
+      "bare": "https://market.m.taobao.com/app/tb-zhibo-app/callapp-mid-center/home.html?bizCode=taojinbilahuo-2&deliveryId=80330&fromSource=55",
       "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 95180
+      "id": 80330
      },
      {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=95180&sceneId=5365&implId=other_1390_0_95180_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 15,
-      "n": "浏览超多好物",
-      "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
+      "u": "https://pages-fast.m.taobao.com/wow/z/vip/hbqd5/qd?disableNav=YES&x-ssr=true&status_bar_transparent=true&forceThemis=true&spma=hbqd5&spmb=27932209&prismChannel=poplayer&deliveryId=88134&sceneId=5365&hd_from_id=100089&implId=other_1390_2330018_88134_0",
+      "w": 12,
+      "n": "去签到领红包",
+      "bare": "https://pages-fast.m.taobao.com/wow/z/vip/hbqd5/qd?disableNav=YES&x-ssr=true&status_bar_transparent=true&forceThemis=true&spma=hbqd5&spmb=27932209&prismChannel=poplayer",
       "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 95180
+      "id": 88134
      },
      {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=95180&sceneId=5365&implId=other_1390_0_95180_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 15,
-      "n": "浏览超多好物",
-      "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
+      "u": "https://pages-fast.m.taobao.com/wow/z/app/tb-vip/tb-new-vip/route?x-ssr=true&disableNav=YES&status_bar_transparent=true&x-preload=true&disableProgress=true&forceThemis=true&from=goldcoins&prismChannel=poplayer&deliveryId=89443&sceneId=5365&hd_from_id=100089&implId=count_1390_2747001_89443_0",
+      "w": 12,
+      "n": "查看我的会员等级",
+      "bare": "https://pages-fast.m.taobao.com/wow/z/app/tb-vip/tb-new-vip/route?x-ssr=true&disableNav=YES&status_bar_transparent=true&x-preload=true&disableProgress=true&forceThemis=true&from=goldcoins&prismChannel=poplayer",
       "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 95180
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94053&sceneId=5365&implId=other_1390_0_94053_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 15,
-      "n": "浏览超多好物",
-      "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 94053
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94053&sceneId=5365&implId=other_1390_0_94053_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 15,
-      "n": "浏览超多好物",
-      "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 94053
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94053&sceneId=5365&implId=other_1390_0_94053_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 15,
-      "n": "浏览超多好物",
-      "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 94053
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94053&sceneId=5365&implId=other_1390_0_94053_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 15,
-      "n": "浏览超多好物",
-      "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 94053
-     },
-     {
-      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94053&sceneId=5365&implId=other_1390_0_94053_0&asac=2A216088LD6TNDJO5XW1UY",
-      "w": 15,
-      "n": "浏览超多好物",
-      "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 94053
-     },
-     {
-      "u": "https://pages.tmall.com/wow/z/tmtjb/tjbSSR/taocoin-question?disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&forceTheims=true&awardType=COIN&deliveryId=94442&sceneId=5365&hd_from_id=100089&implId=other_1390_2961012_94442_0",
-      "w": 22,
-      "n": "淘金币趣味课堂",
-      "bare": "https://pages.tmall.com/wow/z/tmtjb/tjbSSR/taocoin-question?disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&forceTheims=true&awardType=COIN",
-      "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 94442
+      "id": 89443
      },
      {
       "u": "https://mo.m.taobao.com/etao2/page_1754537425943?ep=bpTovMIXJfY&taskId=11648&etao_biz_cooperation=H0HwxDeCvA%2F54Zos%2BPr3Jtgq5Ap4OynouGY%2FkaPRqzg%3D&deliveryId=89609&sceneId=5365&hd_from_id=100089&implId=other_1390_2732004_89609_0",
@@ -134,16 +86,112 @@
       "id": 89609
      },
      {
-      "u": "https://market.m.taobao.com/app/tb-zhibo-app/callapp-mid-center/home.html?bizCode=taojinbilahuo-2&fromSource=55&deliveryId=80330&sceneId=5365&hd_from_id=100089&implId=other_1390_2487017_80330_0",
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94054&sceneId=5365&implId=other_1390_0_94054_0&asac=2A216088LD6TNDJO5XW1UY",
       "w": 15,
-      "n": "去淘宝直播提现",
-      "bare": "https://market.m.taobao.com/app/tb-zhibo-app/callapp-mid-center/home.html?bizCode=taojinbilahuo-2&deliveryId=80330&fromSource=55",
+      "n": "浏览心仪好物",
+      "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
       "asac": "2A216088LD6TNDJO5XW1UY",
-      "id": 80330
+      "id": 94054
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94054&sceneId=5365&implId=other_1390_0_94054_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "浏览心仪好物",
+      "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 94054
+     },
+     {
+      "u": "https://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=94054&sceneId=5365&implId=other_1390_0_94054_0&asac=2A216088LD6TNDJO5XW1UY",
+      "w": 15,
+      "n": "浏览心仪好物",
+      "bare": "https://ku.m.taobao.com/search/m.html?disableNav=YES&channelSpmA=yunfan&channelSpmB=26877694&channelSrp=hudong_tjb11&pid=430958_1006,430959_1006&hdSecurity=1&coinSecurityDeliveryId=89139&coinSecuritySceneId=9214",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 94054
+     },
+     {
+      "u": "https://pages.tmall.com/wow/z/tmtjb/tjbSSR/taocoin-question?disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&forceTheims=true&awardType=COIN&deliveryId=94442&sceneId=5365&hd_from_id=100089&implId=other_1390_2961012_94442_0",
+      "w": 22,
+      "n": "淘金币趣味课堂",
+      "bare": "https://pages.tmall.com/wow/z/tmtjb/tjbSSR/taocoin-question?disableNav=YES&largescreenstyle=fullscreen&status_bar_transparent=true&forceTheims=true&awardType=COIN",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 94442
+     },
+     {
+      "u": "https://pages-fast.m.taobao.com/wow/z/app/tb-vip/month-card-v2/home?x-ssr=true&disableNav=YES&status_bar_transparent=true&forceThemis=true&x-preload=true&disableProgress=true&from=taojinbi_rw&prismChannel=poplayer&deliveryId=94970&sceneId=5365&hd_from_id=100089&implId=count_1390_2987013_94970_0",
+      "w": 12,
+      "n": "去省钱卡领红包",
+      "bare": "https://pages-fast.m.taobao.com/wow/z/app/tb-vip/month-card-v2/home?x-ssr=true&disableNav=YES&status_bar_transparent=true&forceThemis=true&x-preload=true&disableProgress=true&from=taojinbi_rw&prismChannel=poplayer",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 94970
+     },
+     {
+      "u": "https://pages-fast.m.taobao.com/wow/z/tmtjb/tjbSSR/taocoin-life-deduct?x-ssr=true&disableNav=YES&forceThemis=true&status_bar_transparent=true&x-sec=wua&asac=2A24419HDF65FYXCCXZ5LE&largescreenstyle=fullscreen&cardTab=true&subSource=tjbdk_sanheyi&fcc_match_query=initRechargeTab&initRechargeTab=rechargePhoneBill&initNavTab=travel&hd_from=feizhurenwu&spmb=feizhurenwu&deliveryId=95830&sceneId=5365&hd_from_id=100089&implId=other_1390_2978002_95830_0",
+      "w": 12,
+      "n": "酒店超抵日至高5%",
+      "bare": "https://pages-fast.m.taobao.com/wow/z/tmtjb/tjbSSR/taocoin-life-deduct?x-ssr=true&disableNav=YES&forceThemis=true&status_bar_transparent=true&x-sec=wua&asac=2A24419HDF65FYXCCXZ5LE&largescreenstyle=fullscreen&cardTab=true&subSource=tjbdk_sanheyi&fcc_match_query=initRechargeTab&initRechargeTab=rechargePhoneBill&initNavTab=travel&hd_from=feizhurenwu&spmb=feizhurenwu",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 95830
+     },
+     {
+      "u": "https://h5.m.taobao.com/taolive/video.html?livesource=platformtask.liveexchange.taojinbi&fromSource=10035&entryLivesource=platformtask.liveexchange.taojinbi&needRecommend=true&sLaunch=0&sKeep=1&sModuleName=taolive&spm=&content=957c33e96a1a6f000548df7042625fab&targetAliveId=2189&prismChannel=poplayer&deliveryId=105247&sceneId=5365&hd_from_id=100089&implId=other_1390_3348001_105247_0",
+      "w": 12,
+      "n": "双11寻宝中国抢4999元",
+      "bare": "https://h5.m.taobao.com/taolive/video.html?livesource=platformtask.liveexchange.taojinbi&fromSource=10035&entryLivesource=platformtask.liveexchange.taojinbi&needRecommend=true&sLaunch=0&sKeep=1&sModuleName=taolive&spm=&content=957c33e96a1a6f000548df7042625fab&targetAliveId=2189&prismChannel=poplayer",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 105247
+     },
+     {
+      "u": "https://pages.tmall.com/wow/z/tmtjb/tjbSSR/taocoin-kuaishan-feeds?disableNav=YES&hd_from=task&spmb=flashsalededuct_task&sceneCode=flashSaleDeduct_1022fushi&tabId=recommend&prismChannel=poplayer&deliveryId=105475&sceneId=5365&hd_from_id=100089&implId=other_1390_3507016_105475_0",
+      "w": 12,
+      "n": "逛秋冬服饰抵扣快闪",
+      "bare": "https://pages.tmall.com/wow/z/tmtjb/tjbSSR/taocoin-kuaishan-feeds?disableNav=YES&hd_from=task&spmb=flashsalededuct_task&sceneCode=flashSaleDeduct_1022fushi&tabId=recommend&prismChannel=poplayer",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 105475
+     },
+     {
+      "u": "https://s.m.taobao.com/h5entry?g_channelSrp=taojinbi_zsrw&g_closeModues=tab%2Conesearch%2Csc&g_searchAdRate=50&g_bizFilter=taojinbi_zsrw&src=taojinbi_zsrw&prismChannel=poplayer&deliveryId=106420&sceneId=5365&hd_from_id=100089&implId=other_1390_3438002_106420_0&q=女装",
+      "w": 10,
+      "n": "搜一搜你喜欢的宝贝",
+      "bare": "https://s.m.taobao.com/h5entry?&g_channelSrp=taojinbi_zsrw&g_closeModues=tab,onesearch,sc&g_searchAdRate=50&g_bizFilter=taojinbi_zsrw&src=taojinbi_zsrw&prismChannel=poplayer",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 106420
+     },
+     {
+      "u": "https://s.m.taobao.com/h5entry?g_channelSrp=taojinbi_zsrw&g_closeModues=tab%2Conesearch%2Csc&g_searchAdRate=50&g_bizFilter=taojinbi_zsrw&src=taojinbi_zsrw&prismChannel=poplayer&deliveryId=106420&sceneId=5365&hd_from_id=100089&implId=other_1390_3438002_106420_0&q=女装",
+      "w": 10,
+      "n": "搜一搜你喜欢的宝贝",
+      "bare": "https://s.m.taobao.com/h5entry?&g_channelSrp=taojinbi_zsrw&g_closeModues=tab,onesearch,sc&g_searchAdRate=50&g_bizFilter=taojinbi_zsrw&src=taojinbi_zsrw&prismChannel=poplayer",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 106420
+     },
+     {
+      "u": "https://s.m.taobao.com/h5entry?g_channelSrp=taojinbi_zsrw&g_closeModues=tab%2Conesearch%2Csc&g_searchAdRate=50&g_bizFilter=taojinbi_zsrw&src=taojinbi_zsrw&prismChannel=poplayer&deliveryId=106420&sceneId=5365&hd_from_id=100089&implId=other_1390_3438002_106420_0&q=女装",
+      "w": 10,
+      "n": "搜一搜你喜欢的宝贝",
+      "bare": "https://s.m.taobao.com/h5entry?&g_channelSrp=taojinbi_zsrw&g_closeModues=tab,onesearch,sc&g_searchAdRate=50&g_bizFilter=taojinbi_zsrw&src=taojinbi_zsrw&prismChannel=poplayer",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 106420
+     },
+     {
+      "u": "https://s.m.taobao.com/h5entry?g_channelSrp=taojinbi_zsrw&g_closeModues=tab%2Conesearch%2Csc&g_searchAdRate=50&g_bizFilter=taojinbi_zsrw&src=taojinbi_zsrw&prismChannel=poplayer&deliveryId=106420&sceneId=5365&hd_from_id=100089&implId=other_1390_3438002_106420_0&q=女装",
+      "w": 10,
+      "n": "搜一搜你喜欢的宝贝",
+      "bare": "https://s.m.taobao.com/h5entry?&g_channelSrp=taojinbi_zsrw&g_closeModues=tab,onesearch,sc&g_searchAdRate=50&g_bizFilter=taojinbi_zsrw&src=taojinbi_zsrw&prismChannel=poplayer",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 106420
+     },
+     {
+      "u": "https://s.m.taobao.com/h5entry?g_channelSrp=taojinbi_zsrw&g_closeModues=tab%2Conesearch%2Csc&g_searchAdRate=50&g_bizFilter=taojinbi_zsrw&src=taojinbi_zsrw&prismChannel=poplayer&deliveryId=106420&sceneId=5365&hd_from_id=100089&implId=other_1390_3438002_106420_0&q=女装",
+      "w": 10,
+      "n": "搜一搜你喜欢的宝贝",
+      "bare": "https://s.m.taobao.com/h5entry?&g_channelSrp=taojinbi_zsrw&g_closeModues=tab,onesearch,sc&g_searchAdRate=50&g_bizFilter=taojinbi_zsrw&src=taojinbi_zsrw&prismChannel=poplayer",
+      "asac": "2A216088LD6TNDJO5XW1UY",
+      "id": 106420
      }
     ]
    }
   }
  },
- "_mine": "scene 5365 日常版；任务 5 个 / 11 步；生成时间见文件头。排除：支付宝4、饿了么1、duanqu1、下单1、拉人1、小游戏1、拍立淘404、process组1、签到1(页面自动)。 生成于 2026-10-22"
+ "_mine": "scene 5365 日常版；任务 11 个 / 17 步；生成时间见文件头。排除：支付宝4、饿了么1、duanqu1、下单1、拉人1、小游戏1、拍立淘404、process组1、签到1(页面自动)。 生成于 2026-10-22"
 }

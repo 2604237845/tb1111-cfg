@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>配置自检</title>
+<style>
+  :root{--bg:#f6f7f9;--card:#fff;--line:#e6e8ee;--txt:#1c2028;--dim:#6b7280;--red:#d92d20;--ok:#0a8f4a;--amber:#b45309}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;padding:18px 16px 40px;background:var(--bg);color:var(--txt);
+       font:15px/1.62 -apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif}
+  h1{font-size:19px;margin:0 0 4px}
+  .sub{color:var(--dim);font-size:13px;margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+  .badge{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;margin-bottom:10px}
+  .badge.bad{background:#fdecea;color:var(--red)}
+  .badge.warn{background:#fef3c7;color:var(--amber)}
+  .badge.good{background:#e7f6ee;color:var(--ok)}
+  h2{font-size:14px;margin:0 0 8px;color:var(--dim);font-weight:600}
+  ul{margin:0;padding-left:18px}
+  li{margin:6px 0}
+  code{background:#f1f3f7;border-radius:6px;padding:2px 6px;font-size:12.5px;
+       font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}
+  .row{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px}
+  .row:last-child{border-bottom:0}
+  .row i{font-style:normal;color:var(--dim);min-width:74px}
+  .row b{font-weight:600;word-break:break-all}
+  .foot{color:var(--dim);font-size:12.5px;text-align:center;margin-top:18px}
+</style>
+</head>
+<body>
+<h1 id="title">配置自检</h1>
+<div class="sub">看到这个页面 = 快捷指令已经把配置读进来了，只是这次没跑成任务</div>
+
+<div class="card">
+  <div class="badge bad" id="badge">未知原因</div>
+  <div id="why" style="font-size:15px"></div>
+</div>
+
+<div class="card">
+  <h2>这次的运行链路</h2>
+  <div class="row"><i>配置地址</i><b><code id="cfgUrl">—</code></b></div>
+  <div class="row"><i>脚本地址</i><b><code id="jsUrl">—</code></b></div>
+  <div class="row"><i>识别到</i><b id="reason">—</b></div>
+</div>
+
+<div class="card">
+  <h2>怎么排查</h2>
+  <ul id="steps"></ul>
+</div>
+
+<div class="foot">tb1111 淘金币日常版 · 自检页</div>
+
+<script>
+(function () {
+  var SELF = 'https://tb1111-cfg2.app.workbuddy.host';
+  var q = {};
+  location.search.replace(/^\?/, '').split('&').forEach(function (kv) {
+    if (!kv) return;
+    var p = kv.split('=');
+    q[decodeURIComponent(p[0])] = decodeURIComponent(p[1] || '');
+  });
+  var r = q.r || '';
+
+  var M = {
+    nodata: {
+      badge: '配置没拉到',
+      why: '快捷指令没拿到配置内容，或者拿到的不是一份配置。最常见的是地址填错、网络被挡，或者配置返回了空白/报错页。',
+      steps: [
+        '在 Safari 里打开 <code>' + SELF + '/tj.json</code>，应该看到一大段 JSON。打不开就是网络或域名问题。',
+        '检查快捷指令「字典」里那个 URL 填的是不是 <code>' + SELF + '/tj.json</code>（要 base64 编码过的）。',
+        '检查「empty.txt」那一行动作填的是 <code>' + SELF + '/empty.txt</code>。',
+        '确认手机能上网、没开会导致拦截的代理。'
+      ]
+    },
+    badcfg: {
+      badge: '配置格式不对',
+      why: '配置拿到了，但里面的任务清单不是数组（可能被截断，或者拿到的其实是个报错页）。',
+      steps: [
+        '在 Safari 打开 <code>' + SELF + '/tj.json</code>，确认是完整 JSON 而不是 HTML 报错页。',
+        '确认配置文件大小在 3 KB 左右；明显偏小说明被 CDN 或代理截断了。'
+      ]
+    },
+    error: {
+      badge: '脚本报错',
+      why: '配置读到了，但脚本执行时抛了异常。多半是脚本文件和配置格式对不上（例如脚本还是旧版，认不出纯 id 写法）。',
+      steps: [
+        '看清楚脚本地址是不是 <code>' + SELF + '/tj.js</code>（这个和 tj2.js 是同一份，7040 字节左右）。',
+        '在 Safari 打开脚本地址，确认能下到内容、不是空白页。',
+        '如果脚本地址指向 GitHub，等 1~5 分钟 CDN 缓存过去再试，或者换成上面的自有域名。'
+      ]
+    }
+  };
+
+  var m = M[r] || {
+    badge: '未知原因',
+    why: '这次没识别到具体原因码，可能是网络在中途断了。重跑一次，如果还是这样就按下面逐条查。',
+    steps: ['在 Safari 打开 <code>' + SELF + '/tj.json</code> 确认能取到配置。', '在 Safari 打开 <code>' + SELF + '/tj.js</code> 确认能取到脚本。']
+  };
+
+  document.getElementById('badge').textContent = m.badge;
+  document.getElementById('why').textContent = m.why;
+  document.getElementById('reason').textContent = r || '(空)';
+  document.getElementById('cfgUrl').textContent = SELF + '/tj.json';
+  document.getElementById('jsUrl').textContent = SELF + '/tj.js';
+  document.getElementById('steps').innerHTML = m.steps.map(function (s) {
+    return '<li>' + s + '</li>';
+  }).join('');
+})();
+</script>
+</body>
+</html>

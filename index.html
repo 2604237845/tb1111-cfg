@@ -153,6 +153,12 @@ const SCENES = [
   { id: '9647', name: '寻宝中国', hint: 'B 指令 · 直播任务' }
 ];
 
+const SOURCE_LABEL = {
+  'sites+github': '双源',
+  'github': 'GitHub 源',
+  'sites': '自有域名'
+};
+
 const STATUS_LABEL = {
   no_count: { cls: 'no', text: '跑不通' },
   crowd: { cls: 'crowd', text: '人群不符' },
@@ -277,7 +283,7 @@ function renderSnapshot() {
   $('snapGrid').innerHTML = `
     <div class="kv"><i>配置条数</i><b>${snap.item_count}</b></div>
     <div class="kv"><i>任务个数</i><b>${snap.task_count}</b></div>
-    <div class="kv"><i>来源</i><b class="small">${esc(snap.source || '-')}</b></div>
+    <div class="kv"><i>发布来源</i><b class="small" title="${esc(snap.source || '')}">${esc(SOURCE_LABEL[snap.source] || snap.source || '-')}</b></div>
     <div class="kv" style="grid-column:span 2"><i>文件指纹 sha256</i><b class="small">${esc(String(snap.sha256 || '').slice(0, 24))}…</b></div>
   `;
 }

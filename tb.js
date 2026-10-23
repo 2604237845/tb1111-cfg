@@ -127,6 +127,20 @@ function run () {
     var scheme = schemes[More]
     var taskList = DATA.activity.taskList
 
+    // ===== 完整地址型 item（照淘金币日常版的写法搬过来） =====
+    //   item 可以写成 "://m.duanqu.com?_ariver_appid=22129413&_mp_code=tb 12"
+    //   —— 第一段是完整落地地址（含 :// 或 App scheme），第二段纯数字是停留秒数。
+    //   纯数字 id 的写法一个字都不变，仍旧走 baseurl 模板，输出与老版本逐字节一致。
+    function isFullUrl(u) {
+        return u.indexOf('://') === 0 || /^[A-Za-z][A-Za-z0-9+.\-]*:\/\//.test(u);
+    }
+    function wrapFull(u) {
+        // 已经是 App scheme 的，原样放行
+        if (/^(taobao|taobaolite|tmall|alipays|alipay|sinaweibo|ksnebula|baiduboxapp|baiduboxlite):\/\//i.test(u)) return u;
+        if (u.indexOf('://') === 0) u = 'https' + u;
+        return 'taobao://m.taobao.com/tbopen/index.html?h5Url=' + encodeURIComponent(u);
+    }
+
 
     taskList = taskList.map((v) => DATA.taskData[v]).filter((v) => !!v);
 
@@ -173,6 +187,24 @@ function run () {
 
                 var str = v;
                 var params = str.split(' ');
+
+                // 🆕 完整地址型：不走 baseurl 模板，直接当落地页打开
+                if (params[0] && isFullUrl(params[0])) {
+                    var fw = wait;
+                    if (params.length > 1 && /^\d+$/.test(params[1])) { fw = parseInt(params[1], 10); }
+                    data.push({
+                        url: wrapFull(params[0]),
+                        wait: fw
+                    })
+                    if (i%2 === 0){
+                        data.push({
+                            url:s.main,
+                            wait:5
+                        })
+                    }
+                    return;
+                }
+
                 var url = baseUrl;
 
 

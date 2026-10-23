@@ -15,10 +15,10 @@
 
   现状（2026-10-23 04:10）🟢 双源已恢复，两处逐字节一致：
     自有域名  ✅ 已重新 deploy（不再是 1677 B 那个探针版）
-              tj.json 3652 B / tj.js 8230 B / tj2.js 8230 B / diag.html 5191 B
-    GitHub    ✅ tj.json 3652 B / tj.js 8230 B / tj2.js 8230 B
-    校验      🟢 两源 sha256 都是 02e484dfc697…，用哪个源跑都是 115 步
-    nock 62 条/23 任务、hhle 76 条/20 任务、tj 113 条/36 任务
+              tj.json 3705 B / tj.js 8230 B / tj2.js 8230 B / diag.html 5191 B
+    GitHub    ✅ tj.json 3705 B / tj.js 8230 B / tj2.js 8230 B
+    校验      🟢 两源 sha256 都是 38af48be61e3…，用哪个源跑都是 117 步
+    nock 62 条/23 任务、hhle 76 条/20 任务、tj 115 条/37 任务
 
 
 🔴🔴🔴 2026-10-22 19:00 发布闸门（主人质问「你没动我赛车配置吧」后加的）
@@ -121,24 +121,27 @@
 
   ⚠️ GitHub raw 有约 5 分钟 CDN 缓存：改完 tj.json 别立刻跑，等 5 分钟手机才拉到新的。
 
-  当前收进配置的 36 个任务 / 73 步任务（2026-10-23 03:00 收官审计后定稿）
+  当前收进配置的 37 个任务 / 74 步任务（2026-10-23 13:40 全量审计后定稿）
     94049 ×10 15s ｜ 94053 ×10 15s ｜ 92801 ×5 15s ｜ 106046 ×5 10s ｜ 106420 ×5 10s
     94054 ×3 15s ｜ 94055 ×3 15s ｜ 94046 ×3 15s ｜ 95180 ×2 15s
     94052 15s ｜ 44739 15s ｜ 44744 10s ｜ 44755 15s ｜ 65214 10s ｜ 67396 20s
     68042 15s ｜ 79268 15s ｜ 81835 10s ｜ 82177 10s ｜ 85202 10s ｜ 88134 10s
     88969 10s ｜ 89443 10s ｜ 91112 10s ｜ 94026 15s ｜ 94442 20s ｜ 94970 10s
     95175 10s ｜ 95830 10s ｜ 103764 15s ｜ 104787 15s ｜ 105247 10s ｜ 105475 10s
-    105890 10s ｜ 107861 20s
+    105890 10s ｜ 107861 20s ｜ 103338 15s（玩三国冰河时代游戏，原「修仙小游戏」，走浮层页待验证）
     81053 从首页回访 15s（ENTRY_EDU，走 town/home?hd_from=20260618home）
       🔴🔴 这一条必须是【完整地址】，不能写成纯 id、不能套 baseurl 浮层页模板：
          ://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?sceneId=5365
-         &hd_from=20260618home&deliveryId=81053&implId=other_1391_2488030_81053_0&hd_from_id=100089
+         &hd_from=20260618home&pageType=DAILY&deliveryId=81053&implId=other_1391_2488030_81053_0&hd_from_id=100089
+      🔴 2026-10-23 13:40 补 pageType=DAILY：main.js 的 links.coinHomeUrl 官方入口就是
+         ...&hd_from=20260618home&pageType=DAILY，前端 ENTRY_EDU 走 showHomeEntryEdu 弹窗，
+         taskParams 里补 hd_from_id = activityId(=100089) 后跳这个 URL。之前只有 hd_from 没 pageType，实测 0/1。
          判定只认 hd_from；浮层页模板里没有这个参数，套上去必然判「未从首页进入」。
          2026-10-22 账本原文就是这么记的：跳的是 m.taobao.com/index.htm，
          判定看 hd_from，我们只给了 hd_from_id，missing=["hd_from"] → 不计进度。
       ✅ 改完整地址后 round3 做成（tj-durations.json：status=COMPLETE，wait_should=15）
       ⚠️ 15s 不是我拍的，是那一轮成功用的秒数；写 12s 会被提前切走导致不计进度。
-  全量 = 115 步 / 约 20.1 分钟（73 步任务 + 38 次穿插首页 + 助力/红包/购物车/收尾）
+  全量 = 117 步 / 约 20.5 分钟（74 步任务 + 39 次穿插首页 + 助力/红包/购物车/收尾）
 
   🔴 03:00 补进来的 6 个（之前池子快照 isToday=false 被漏掉，实测同类型都能跑）：
     94053 浏览超多好物 ×10 ｜ 95180 浏览超多好物 ×2 ｜ 65214 充话费0元起

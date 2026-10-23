@@ -18,7 +18,7 @@
               tj.json 3652 B / tj.js 8230 B / tj2.js 8230 B / diag.html 5191 B
     GitHub    ✅ tj.json 3652 B / tj.js 8230 B / tj2.js 8230 B
     校验      🟢 两源 sha256 都是 02e484dfc697…，用哪个源跑都是 115 步
-    nock 61 条/22 任务、hhle 73 条/17 任务、tj 113 条/36 任务
+    nock 63 条/24 任务、hhle 76 条/20 任务、tj 113 条/36 任务
 
 
 🔴🔴🔴 2026-10-22 19:00 发布闸门（主人质问「你没动我赛车配置吧」后加的）
@@ -60,7 +60,10 @@
 
 
 【A「双十一淘金币赛车任务」→ 8917 双11能量】
-  nock.json = 配置（61 条 / 22 个任务 + 助力 + 菜单链接）  2026-10-22 16:59 加回 106595
+  nock.json = 配置（63 条 / 24 个任务 + 助力 + 菜单链接）
+              2026-10-22 16:59 加回 106595
+              2026-10-23 09:45 开头加 106369 玩一玩火爆连连消 / 106370 玩斗地主打牌赢现金
+                            （完整地址型，各 12 秒；tb.js 同步加了完整地址支持）
   tb.js     = 脚本
   动作 #2 字典的 URL 和 fuc.url 两处都填同一串，二选一：
 
@@ -71,7 +74,8 @@
   aHR0cHM6Ly9naC1wcm94eS5jb20vaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tLzI2MDQyMzc4NDUvdGIxMTExLWNmZy9tYWluL25vY2suanNvbg==
 
 【B「双十一直播寻宝中国」→ 9647 寻宝中国】
-  hhle.json = 配置（73 条 / 17 个任务）    hhle.js = 脚本
+  hhle.json = 配置（76 条 / 20 个任务）    hhle.js = 脚本
+  · 2026-10-23 09:23：删 107969 刘维（已下架）；99323 李佳琦（人群不符）挪到最后一条试
   动作 #2 字典的 URL，二选一：
 
   ① 自有域名
@@ -201,11 +205,30 @@
 单项停留时长：item 里写 "107910 17" 表示该任务停 17 秒；
               不写则走 task.wait 的全局值（nock=15 / hhle=18）。
 
-⚠️ 脚本地址在哪
-  json 里 taskData.<组名>.url 指向脚本（tb.js / hhle.js / tb-temp.js）。
-  现在写的是 jsDelivr 地址（fastly.jsdelivr.net/gh/2604237845/tb1111-cfg@main/…），
-  因为脚本几乎不改、jsDelivr 有 SLA。
-  代价：jsDelivr 对分支引用有 12 小时缓存 —— 真要改 js 逻辑时换文件名（如 hhle2.js）再改 common.url。
+item 两种写法（nock.json / tb.js）
+  ① 纯数字 id —— 走 baseurl 模板（浮层页救回计数）
+       "100340"            → 用 task.wait=15
+       "107860 20"         → 这一条单独停 20 秒
+  ② 完整地址型 —— 照淘金币日常版小程序任务的写法，直接当落地页打开
+       "://m.duanqu.com?_ariver_appid=22129413&… 12"
+       ↑ 第一段是完整地址（:// 开头 = 自动补 https 并套 tbopen），第二段纯数字是秒数
+       taobao:// / alipays:// / sinaweibo:// 这类 App scheme 会原样放行不套壳
+     什么时候用②：任务落地页是独立地址、浮层页拼不出来的（小程序 / 小游戏 / 直播页）。
+     例子：106369 → m.duanqu.com（小程序），106370 → pages-fast…/ddz-ssr（斗地主 H5）。
+  🔴 ②只有新 tb.js 支持；老 tb.js 会把整串塞进 baseurl 的 deliveryId 位，地址就废了。
+     所以 tb.js 和 nock.json 必须同版本一起发。纯数字 id 的输出与老 tb.js 逐字节一致（已实测）。
+
+⚠️ 脚本地址在哪（2026-10-23 拆 plist 实测更正）
+  A 赛车 / B 寻宝 的脚本地址是**写死在动作里**的，不是 json 的 taskData.common.url：
+      A：动作 #192 是「URL」= https://tb1111-cfg2.app.workbuddy.host/tb.js，#193 下载它
+      B：同位置换 hhle.js
+      #2 字典 URL / fuc.url（base64）= 配置地址 https://…/nock.json
+  ⇒ 改 js 逻辑 = 改本地 tb.js → **重新 deploy 自有域名**（CloudStudio 网关无 Cache-Control，发完立刻生效）→
+    GitHub 再推一份存档。common.url 里的 jsDelivr 地址对赛车不起作用（只有 12 小时缓存，别指望它）。
+  🔴 脚本会被塞进 data:text/html 里执行 ⇒ **js 源码里绝对不能出现井号 # 和百分号 %**。
+     现在 tb.js 里的 % 只存在于 ttScheme 那几个字符串字面量（More=2 才用），没影响；新增代码不许带。
+  （旧说法留档：jsDelivr 对分支引用有 12 小时缓存，真要改 js 时换文件名 hhle2.js 再改 common.url ——
+   这条只对走 common.url 的壳成立，A/B 两个快捷指令不适用，见上一节。）
   配置 json 走 gh-proxy（60 秒）或自有域名（即时），日常改任务不受影响。
 
 备用反代（gh-proxy.com 万一打不开时，把 URL 前缀换成它）：

@@ -1,1 +1,78 @@
-{"activity":{"tip":"🧪 对比验证 · 106369 / 106370 两种格式各跑一遍\n---------------\n第 1~2 步：老格式（线上 nock.json 那种）→ 纯 id 走 taogold 弹层，各 18 秒\n第 3~4 步：新格式 → 09:10 留存的原 action 直跳落地页，各 20 秒\n先老后新，这样能分辨：前面涨了=老格式有效；只有后面涨=新格式有效；都不涨=两种都废\n全程约 76 秒\n---------------\n必须配 tb-temp.js（动作193 填 tb-temp.js）\n","vvv":1,"noad":true,"nohome":true,"mine":{"help":"","red":"jdsDmhk","cart":"j36qPrS","pv":"j36qPrS"},"list":["🧪开始测试🧪"],"mapping":{"🧪开始测试🧪":{"type":"task","key":["赚话费"]}},"taskList":["赚话费"]},"taskData":{"tag":"temp369","common":{"url":"https://fastly.jsdelivr.net/gh/2604237845/tb1111-cfg@main/tb-temp.js"},"赚话费":{"type":"task1","endpage":"taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com","main":"taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com","endMessage":"验证结束","task":{"tag":"temp369","scheme":"taobao://m.taobao.com/tbopen/index.html?h5Url=","baseurl":"://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=占位参数1&sceneId=8917&q=iphone","wait":18,"wait2":"","param":{},"before":[],"item":["106369","106370",{"url":"://m.duanqu.com?_ariver_appid=22129413&_mp_code=tb&referer=2026shuang11&prismChannel=tcoinNewPoplayer&largescreenstyle=fullscreen","wait":20},{"url":"://pages-fast.m.taobao.com/wow/z/app/tbddz/ddz-ssr/home?disableNav=YES&status_bar_transparent=true&x-ssr=true&x-sec=wua&asac=2A21519C6DMD9D6IMOK6RC&isUniApp=true&uniapp_id=1011727&uniapp_page=ssr&from=2026shuang11&prismChannel=tcoinNewPoplayer&largescreenstyle=fullscreen","wait":20}]}}},"_mine":"2026-10-22 11:18 对比验证配置：同一份里混两种 item 写法（tb-temp.js 原生支持混用）。① 字符串 \"106369\"/\"106370\" → 走 baseurl 的 tao-gold-srp-task-pop 弹层（线上 nock.json 的老格式），wait=18；② 对象 {url,wait} → 09:10 快照留存的原始 assets.action 直跳落地页（m.duanqu.com / pages-fast.m.taobao.com），wait=20。顺序刻意先老后新：任务完成后同一 delivery 不再计数，所以若第1~2步涨了就是老格式有效，只有第3~4步涨就是新格式有效，都不涨则两种都废。验证的是「ignore=true 时能否用旧 action 直开绕过计数限制」。noad/nohome=true，common.url=tb-temp.js。"}
+{
+ "activity": {
+  "tip": "🧪 6 个赛车任务 · 两种通道分组测试\n---------------\n前 6 步：浮层页（纯 id 走 tao-gold-srp-task-pop，各 15 秒）\n  → 107016 搜一搜 / 100531 省钱等级考试 / 99672 芭芭农场\n    106513 拍立淘 / 100340 逛你喜欢的商品 / 100453 逛你喜欢的商品\n后 5 步：直跳（任务自己的 assets.action，不走弹层）\n  → 同样这几个，秒数按各自要求给足（12~20 秒）\n---------------\n先浮层页后直跳，任务完成就不再计数 ⇒\n  某个任务变成 1/N（或 N/N）= 浮层页那条就有效\n  浮层页没涨、直跳后涨了 = 只有直跳有效\n  两条都没涨 = 这个任务两个通道都不认\n全程约 3 分半\n---------------\n必须配 tb-temp.js（动作 #193 填 tb-temp.js）\n",
+  "vvv": 1,
+  "noad": true,
+  "nohome": true,
+  "mine": {
+   "help": "",
+   "red": "jdsDmhk",
+   "cart": "j36qPrS",
+   "pv": "j36qPrS"
+  },
+  "list": [
+   "🧪开始测试🧪"
+  ],
+  "mapping": {
+   "🧪开始测试🧪": {
+    "type": "task",
+    "key": [
+     "赚话费"
+    ]
+   }
+  },
+  "taskList": [
+   "赚话费"
+  ]
+ },
+ "taskData": {
+  "tag": "temp369",
+  "common": {
+   "url": "https://fastly.jsdelivr.net/gh/2604237845/tb1111-cfg@main/tb-temp.js"
+  },
+  "赚话费": {
+   "type": "task1",
+   "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+   "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+   "endMessage": "测试结束，回去看这 6 个任务涨了哪几个",
+   "task": {
+    "tag": "temp369",
+    "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
+    "baseurl": "://market.m.taobao.com/app/tbsearchwireless-pages/tao-gold-srp-task-pop/index?deliveryId=占位参数1&sceneId=8917&q=iphone",
+    "wait": 15,
+    "wait2": "",
+    "param": {},
+    "before": [],
+    "item": [
+     "107016",
+     "100531",
+     "99672",
+     "106513",
+     "100340",
+     "100453",
+     {
+      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fs.m.taobao.com%2Fh5entry%3F%26g_channelSrp%3Dtaojinbi_zsrw_dc%26g_closeModues%3Dtab%2Conesearch%2Csc%26g_bizFilter%3Dtaojinbi_zsrw_dc%26src%3Dtaojinbi_zsrw_dc",
+      "wait": 12
+     },
+     {
+      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages.tmall.com%2Fwow%2Fz%2Ftmtjb%2FtjbSSR%2Ftaocoin-question%3FdisableNav%3DYES%26largescreenstyle%3Dfullscreen%26status_bar_transparent%3Dtrue%26forceTheims%3Dtrue%26awardType%3Denergy",
+      "wait": 18
+     },
+     {
+      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fz%2Fhdwk%2Ffarm-ssr%2Ftmfarm%3FdisableNav%3DYES%26disableProgress%3DYES%26showNavigationBar%3Dtrue%26x-ssr%3Dtrue%26x-preload%3Dtrue%26isTransparentBar%3Dtrue%26uniapp_id%3D1100518%26uniapp_page%3Dfarm%26hd_from%3D26hudong%26prismChannel%3DtcoinNewPoplayer%26largescreenstyle%3Dfullscreen",
+      "wait": 12
+     },
+     {
+      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fh5.m.taobao.com%2Ftusou%2Fimage_editor%2Findex.html%3Fpssource%3Dtmtjbztl%26photofrom%3Dtmtjbztl%26useNewFramework%3Dtrue%26lockOverlay%3Dtrue%26prismChannel%3DtcoinNewPoplayer",
+      "wait": 12
+     },
+     {
+      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fkus.m.taobao.com%2Fcoin%2Fk22_activity%3FdisableNav%3DYES%26pid%3Dmm_12852562_1778064_114857300366%26hdSecurity%3D1%26coinSecurityDeliveryId%3D89139%26coinSecuritySceneId%3D9214%26status_bar_transparent%3Dtrue%26prismChannel%3DtaojinbiBenefitPoplayer",
+      "wait": 20
+     }
+    ]
+   }
+  }
+ },
+ "_mine": "2026-10-23 10:0x 重建：验证 scene 8917 里 6 个任务走哪条通道能计数。item 前 6 条是字符串纯 id（走 baseurl 的 tao-gold-srp-task-pop 弹层，wait=task.wait=15）；后 5 条是对象 {url,wait}（原始 assets.action 直跳，秒数按 duration 给足）。顺序刻意先弹层后直跳：任务一旦 COMPLETE 就不再计数，所以某任务 0→1 就说明是弹层那条干的；如果弹层全没涨、直跳之后才涨，说明只有直跳有效。107016=搜一搜你心仪的宝贝(3s) / 100531=淘金币省钱等级考试(15s) / 99672=去芭芭农场领水果(5s) / 106513=拍立淘逛感兴趣的宝贝(5s) / 100340+100453=逛你喜欢的商品(15s，对应卡片上「好物沉浸看」「抢购超低价女款羽绒服」这类个性化标题)。⚠️ 好物沉浸看 / 抢购超低价女款羽绒服 这两个名字在接口里查不到独立 deliveryId（8917 全号段 40k-117k 扫了两遍，命中集合里没有），判定为「浏览类任务的个性化展示标题」，实际落点就是 100340/100453 这一类，所以拿它们代跑。noad/nohome=true，common.url=tb-temp.js。"
+}

@@ -1,6 +1,6 @@
 {
  "activity": {
-  "tip": "🧪 6 个赛车任务 · 两种通道分组测试\n---------------\n前 6 步：浮层页（纯 id 走 tao-gold-srp-task-pop，各 15 秒）\n  → 107016 搜一搜 / 100531 省钱等级考试 / 99672 芭芭农场\n    106513 拍立淘 / 100340 逛你喜欢的商品 / 100453 逛你喜欢的商品\n后 5 步：直跳（任务自己的 assets.action，不走弹层）\n  → 同样这几个，秒数按各自要求给足（12~20 秒）\n---------------\n先浮层页后直跳，任务完成就不再计数 ⇒\n  某个任务变成 1/N（或 N/N）= 浮层页那条就有效\n  浮层页没涨、直跳后涨了 = 只有直跳有效\n  两条都没涨 = 这个任务两个通道都不认\n全程约 3 分半\n---------------\n必须配 tb-temp.js（动作 #193 填 tb-temp.js）\n",
+  "tip": "🧪 赛车任务通道对比测试（8+7 = 15 步）\n---------------\n【前 8 步】浮层页（纯 id → tao-gold-srp-task-pop，各停 15 秒）\n  107016 搜一搜 / 100531 省钱等级考试 / 99672 芭芭农场\n  106513 拍立淘 / 100340+100453 逛你喜欢的商品\n  106369 火爆连连消 / 106370 斗地主\n【后 7 步】直跳（任务原始 assets.action，秒数按各自 duration 给足）\n---------------\n浮层页的原理：queryItem 拿到 duration → 本页倒计时 → 调 scene.trigger\n  ⇒ 它不打开落地页，所以对小程序/支付宝类任务也照样能计数。\n直跳的原理：只打开落地页，地址里没有 deliveryId\n  ⇒ 落地页拿不到任务身份，理论上不会计数（这次就是来验证这条）。\n---------------\n读结果：某个任务从 0 变 1/N 或 N/N，就说明「前 8 步」那条有效；\n前 8 步全没动、后 7 步之后才动，说明只有直跳有效。\n全程约 3 分 40 秒 · 必须配 tb-temp.js（动作 #193 填 tb-temp.js）\n",
   "vvv": 1,
   "noad": true,
   "nohome": true,
@@ -34,7 +34,7 @@
    "type": "task1",
    "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
    "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
-   "endMessage": "测试结束，回去看这 6 个任务涨了哪几个",
+   "endMessage": "测试结束，回去看这几个任务涨了哪几个",
    "task": {
     "tag": "temp369",
     "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
@@ -50,6 +50,8 @@
      "106513",
      "100340",
      "100453",
+     "106369",
+     "106370",
      {
       "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fs.m.taobao.com%2Fh5entry%3F%26g_channelSrp%3Dtaojinbi_zsrw_dc%26g_closeModues%3Dtab%2Conesearch%2Csc%26g_bizFilter%3Dtaojinbi_zsrw_dc%26src%3Dtaojinbi_zsrw_dc",
       "wait": 12
@@ -69,10 +71,18 @@
      {
       "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fkus.m.taobao.com%2Fcoin%2Fk22_activity%3FdisableNav%3DYES%26pid%3Dmm_12852562_1778064_114857300366%26hdSecurity%3D1%26coinSecurityDeliveryId%3D89139%26coinSecuritySceneId%3D9214%26status_bar_transparent%3Dtrue%26prismChannel%3DtaojinbiBenefitPoplayer",
       "wait": 20
+     },
+     {
+      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.duanqu.com%3F_ariver_appid%3D22129413%26_mp_code%3Dtb%26referer%3D2026shuang11%26prismChannel%3DtcoinNewPoplayer%26largescreenstyle%3Dfullscreen",
+      "wait": 12
+     },
+     {
+      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fz%2Fapp%2Ftbddz%2Fddz-ssr%2Fhome%3FdisableNav%3DYES%26status_bar_transparent%3Dtrue%26x-ssr%3Dtrue%26x-sec%3Dwua%26asac%3D2A21519C6DMD9D6IMOK6RC%26isUniApp%3Dtrue%26uniapp_id%3D1011727%26uniapp_page%3Dssr%26from%3D2026shuang11%26prismChannel%3DtcoinNewPoplayer%26largescreenstyle%3Dfullscreen",
+      "wait": 12
      }
     ]
    }
   }
  },
- "_mine": "2026-10-23 10:0x 重建：验证 scene 8917 里 6 个任务走哪条通道能计数。item 前 6 条是字符串纯 id（走 baseurl 的 tao-gold-srp-task-pop 弹层，wait=task.wait=15）；后 5 条是对象 {url,wait}（原始 assets.action 直跳，秒数按 duration 给足）。顺序刻意先弹层后直跳：任务一旦 COMPLETE 就不再计数，所以某任务 0→1 就说明是弹层那条干的；如果弹层全没涨、直跳之后才涨，说明只有直跳有效。107016=搜一搜你心仪的宝贝(3s) / 100531=淘金币省钱等级考试(15s) / 99672=去芭芭农场领水果(5s) / 106513=拍立淘逛感兴趣的宝贝(5s) / 100340+100453=逛你喜欢的商品(15s，对应卡片上「好物沉浸看」「抢购超低价女款羽绒服」这类个性化标题)。⚠️ 好物沉浸看 / 抢购超低价女款羽绒服 这两个名字在接口里查不到独立 deliveryId（8917 全号段 40k-117k 扫了两遍，命中集合里没有），判定为「浏览类任务的个性化展示标题」，实际落点就是 100340/100453 这一类，所以拿它们代跑。noad/nohome=true，common.url=tb-temp.js。"
+ "_mine": "2026-10-23 10:1x 重建：验证 8917 里这些任务走哪条通道能计数。前 8 条字符串纯 id（走 baseurl 的 tao-gold-srp-task-pop 浮层页，wait=task.wait=15，> 各任务 duration）；后 7 条对象 {url,wait}（原始 assets.action，套 tbopen 后直跳）。先浮层后直跳：任务 COMPLETE 后不再计数，所以某任务 0→1 就是浮层页干的；浮层页全不动、直跳后才动 = 只有直跳有效。地图：107016=搜一搜你心仪的宝贝(3s) / 100531=淘金币省钱等级考试(15s) / 99672=去芭芭农场领水果(5s) / 106513=拍立淘逛感兴趣的宝贝(5s) / 100340+100453=逛你喜欢的商品(15s，对应卡片上的个性化标题「好物沉浸看」「抢购超低价女款羽绒服」) / 106369 火爆连连消 / 106370 斗地主。⚠️「好物沉浸看」「抢购超低价女款羽绒服」这两个名字查不到独立 deliveryId（8917 的 40k-117k 号段扫了两遍共 8.7 万个 ID，命中集合里都没有），判定是浏览类任务的个性化展示标题，落点就是 100340/100453 这一类，所以拿它们代跑。noad/nohome=true，common.url=tb-temp.js。"
 }

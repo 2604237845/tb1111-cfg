@@ -65,6 +65,8 @@
      }
     ],
     "item": [
+     "://m.duanqu.com?_ariver_appid=22129413&_mp_code=tb&referer=2026shuang11&prismChannel=tcoinNewPoplayer&largescreenstyle=fullscreen 12",
+     "://pages-fast.m.taobao.com/wow/z/app/tbddz/ddz-ssr/home?disableNav=YES&status_bar_transparent=true&x-ssr=true&x-sec=wua&asac=2A21519C6DMD9D6IMOK6RC&isUniApp=true&uniapp_id=1011727&uniapp_page=ssr&from=2026shuang11&prismChannel=tcoinNewPoplayer&largescreenstyle=fullscreen 12",
      "100340",
      "100340",
      "100340",
@@ -130,5 +132,5 @@
    }
   }
  },
- "_mine": "顺序: 助力jeHPu8C(8s) → 超级红包jdsDmhk(10s) → 快消蓄水期jXmoZZ4(8s) → 淘宝主站 → 61 条任务 → 收尾超级红包jdsDmhk；菜单: 超级红包入口=jdsDmhk / 购物车红包=j36qPrS。任务排列(共 61 条 / 22 个任务): 100340×10 / 100453×10 / 100492×10 / 107016×5 / 100531 / 99673 / 106363 / 99889 / 106588 / 101866 / 107544 / 99672 / 100454×5 / 106513×5 / 106595 / 99720 / 90782 / 107860(20s) / 99723(12s) / 99666(12s) / 100942(15s) / 107451(12s)。单项停留: item 写 \"107860 20\" 第二段就是该项秒数，不写则走 task.wait=15。101866 / 107544 是 groupId 43261（支付宝系任务组）里的隐藏投放位，ignore=true、assets 被剥离无标题无跳转，各 400 能量、0/1 未完成；主人要求保留不动，不要删。106588 人群不符（CROWD_FILTER_NOT_HIT），保留未删。106595 于 2026-10-22 11:13 因人群不符删过，16:54 实查已恢复（SUCCESS / 去惊喜好物逛一逛 / action 102 字符 / 400 能量 / 0-1），16:59 按原位置加回（106513 之后）。已删: 107910（已下架，原置顶 17s）。原始条目留档 tb1111-cfg2-bak/deleted-tasks.json。"
+ "_mine": "顺序: 助力jeHPu8C(8s) → 超级红包jdsDmhk(10s) → 快消蓄水期jXmoZZ4(8s) → 淘宝主站 → 63 条任务 → 收尾超级红包jdsDmhk；菜单: 超级红包入口=jdsDmhk / 购物车红包=j36qPrS。任务排列(共 63 条 / 24 个任务): 106369(12s, 小程序 m.duanqu.com 直开) / 106370(12s, 斗地主 ddz-ssr 直开) / 100340×10 / 100453×10 / 100492×10 / 107016×5 / 100531 / 99673 / 106363 / 99889 / 106588 / 101866 / 107544 / 99672 / 100454×5 / 106513×5 / 106595 / 99720 / 90782 / 107860(20s) / 99723(12s) / 99666(12s) / 100942(15s) / 107451(12s)。单项停留: item 写 \"107860 20\" 第二段就是该项秒数，不写则走 task.wait=15。101866 / 107544 是 groupId 43261（支付宝系任务组）里的隐藏投放位，ignore=true、assets 被剥离无标题无跳转，各 400 能量、0/1 未完成；主人要求保留不动，不要删。106588 人群不符（CROWD_FILTER_NOT_HIT），保留未删。106595 于 2026-10-22 11:13 因人群不符删过，16:54 实查已恢复（SUCCESS / 去惊喜好物逛一逛 / action 102 字符 / 400 能量 / 0-1），16:59 按原位置加回（106513 之后）。已删: 107910（已下架，原置顶 17s）。原始条目留档 tb1111-cfg2-bak/deleted-tasks.json。"
 }

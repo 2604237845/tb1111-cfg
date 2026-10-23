@@ -185,6 +185,34 @@
   怎么重新生成：cd _daily && python build_final3.py（满次数 + tj2.js 紧凑格式，原子写 tj.json）
 
 
+【D「候选任务测试」→ test-cand.json】（2026-10-23 15:05 新建）
+  ⚠️ 独立文件，**线上 tj.json 一个字都没动**。只用来试新候选，跑完换回 tj.json 即可。
+  结构同 tj.json（组名「候选测试」），所以**线上 tj2.js 直接能跑，动作 #193 不用改**。
+
+  🔴 切换只改一处：**动作 #2 字典里的 URL + 同字典的 fuc.url**（两处填同一串）
+     源① 自有域名  https://tb1111-cfg2.app.workbuddy.host/test-cand.json
+       aHR0cHM6Ly90YjExMTEtY2ZnMi5hcHAud29ya2J1ZGR5Lmhvc3QvdGVzdC1jYW5kLmpzb24=
+     源② GitHub   https://gh-proxy.com/https://raw.githubusercontent.com/2604237845/tb1111-cfg/main/test-cand.json
+       aHR0cHM6Ly9naC1wcm94eS5jb20vaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tLzI2MDQyMzc4NDUvdGIxMTExLWNmZy9tYWluL3Rlc3QtY2FuZC5qc29u
+     #25（empty.txt）和 #193（tj2.js）**都不用动**，只要不换源就保持原样。
+
+  跑什么（6 个候选 / 8 条 / 10 步 / 190 秒，开头回一次淘宝主站，不穿插首页）：
+     102741 9651 搜心仪商品后浏览15秒  ×3 @25s   ← 唯一要连做 3 次的
+     98487  9651 双11寻宝中国抢4999元   ×1 @15s   ← 与已完成的 105247 同名，验是否跨场景各算一份
+     97729  9651 去省钱卡领红包        ×1 @25s   ← 与已完成的 94970 同名
+     98453  9619 玩一玩《逆转回合》     ×1 @25s
+     96804  9644 去搜一搜感兴趣的商品   ×1 @25s
+     96219  9619 今日签到             ×1 @15s   ← SIGN 类型，大概率做不通，只验一次定性
+  停留口径：max(assets.duration, desc 秒数) + 10 ⇒ dur15 给 25s、dur5 给 15s。
+  断点续跑：runNum=3 从第 3 条开始（跳过开头回主站和 102741 的前两次）。
+
+  ❌ 没放进来：106453「双11来淘金币狂享20亿」/ 105372「逛精选好物领优惠」
+     查询返回 CROWD_FILTER_NOT_HIT（人群不符），和 81835 / 82177 同类，跑也是空跑。
+
+  生成与自检：cd _daily && python build_test_cand.py && node verify_test_cand.js
+     （13 项断言：候选齐全 / 场景 id 不错配 / 次数 / 全 taobao:// / 不夹带原配置 / 体积 / 断点续跑）
+
+
 【临时测试「8917 · 未完成任务」→ temp8917.json】
   temp8917.json = 配置，tb-temp.js = 脚本（tb.js 副本 + 对象 item 支持 + noad/nohome 开关）
   ① 自有域名：aHR0cHM6Ly90YjExMTEtY2ZnMi5hcHAud29ya2J1ZGR5Lmhvc3QvdGVtcDg5MTcuanNvbg==

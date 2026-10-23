@@ -1,6 +1,6 @@
 {
  "activity": {
-  "tip": "赛车通道测试 15 步\n---------------\n先浮层页 8 步，再直跳 7 步\n---------------\n点下面「开始测试」",
+  "tip": "第二组测试 16 步\n---------------\n支付宝7 + 快手百度2 + 站内5\n最后两个是你点名的\n---------------\n点下面「开始测试」",
   "vvv": 1,
   "noad": true,
   "nohome": true,
@@ -11,10 +11,10 @@
    "pv": "j36qPrS"
   },
   "list": [
-   "🧪开始测试🧪"
+   "开始测试"
   ],
   "mapping": {
-   "🧪开始测试🧪": {
+   "开始测试": {
     "type": "task",
     "key": [
      "赚话费"
@@ -44,45 +44,25 @@
     "param": {},
     "before": [],
     "item": [
-     "107016",
-     "100531",
-     "99672",
-     "106513",
-     "100340",
-     "100453",
-     "106369",
-     "106370",
-     {
-      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fs.m.taobao.com%2Fh5entry%3F%26g_channelSrp%3Dtaojinbi_zsrw_dc%26g_closeModues%3Dtab%2Conesearch%2Csc%26g_bizFilter%3Dtaojinbi_zsrw_dc%26src%3Dtaojinbi_zsrw_dc",
-      "wait": 12
-     },
-     {
-      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages.tmall.com%2Fwow%2Fz%2Ftmtjb%2FtjbSSR%2Ftaocoin-question%3FdisableNav%3DYES%26largescreenstyle%3Dfullscreen%26status_bar_transparent%3Dtrue%26forceTheims%3Dtrue%26awardType%3Denergy",
-      "wait": 18
-     },
-     {
-      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fz%2Fhdwk%2Ffarm-ssr%2Ftmfarm%3FdisableNav%3DYES%26disableProgress%3DYES%26showNavigationBar%3Dtrue%26x-ssr%3Dtrue%26x-preload%3Dtrue%26isTransparentBar%3Dtrue%26uniapp_id%3D1100518%26uniapp_page%3Dfarm%26hd_from%3D26hudong%26prismChannel%3DtcoinNewPoplayer%26largescreenstyle%3Dfullscreen",
-      "wait": 12
-     },
-     {
-      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fh5.m.taobao.com%2Ftusou%2Fimage_editor%2Findex.html%3Fpssource%3Dtmtjbztl%26photofrom%3Dtmtjbztl%26useNewFramework%3Dtrue%26lockOverlay%3Dtrue%26prismChannel%3DtcoinNewPoplayer",
-      "wait": 12
-     },
-     {
-      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fkus.m.taobao.com%2Fcoin%2Fk22_activity%3FdisableNav%3DYES%26pid%3Dmm_12852562_1778064_114857300366%26hdSecurity%3D1%26coinSecurityDeliveryId%3D89139%26coinSecuritySceneId%3D9214%26status_bar_transparent%3Dtrue%26prismChannel%3DtaojinbiBenefitPoplayer",
-      "wait": 20
-     },
-     {
-      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.duanqu.com%3F_ariver_appid%3D22129413%26_mp_code%3Dtb%26referer%3D2026shuang11%26prismChannel%3DtcoinNewPoplayer%26largescreenstyle%3Dfullscreen",
-      "wait": 12
-     },
-     {
-      "url": "://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fz%2Fapp%2Ftbddz%2Fddz-ssr%2Fhome%3FdisableNav%3DYES%26status_bar_transparent%3Dtrue%26x-ssr%3Dtrue%26x-sec%3Dwua%26asac%3D2A21519C6DMD9D6IMOK6RC%26isUniApp%3Dtrue%26uniapp_id%3D1011727%26uniapp_page%3Dssr%26from%3D2026shuang11%26prismChannel%3DtcoinNewPoplayer%26largescreenstyle%3Dfullscreen",
-      "wait": 12
-     }
+     "99653 15",
+     "99654 15",
+     "99660 15",
+     "99662 15",
+     "100985 15",
+     "106619 15",
+     "107483 15",
+     "101121 15",
+     "101122 15",
+     "99667 15",
+     "99728 15",
+     "99731 15",
+     "106358 20",
+     "106736 15",
+     "107860 25",
+     "106595 15"
     ]
    }
   }
  },
- "_mine": "2026-10-23 10:1x 重建：验证 8917 里这些任务走哪条通道能计数。前 8 条字符串纯 id（走 baseurl 的 tao-gold-srp-task-pop 浮层页，wait=task.wait=15，> 各任务 duration）；后 7 条对象 {url,wait}（原始 assets.action，套 tbopen 后直跳）。先浮层后直跳：任务 COMPLETE 后不再计数，所以某任务 0→1 就是浮层页干的；浮层页全不动、直跳后才动 = 只有直跳有效。地图：107016=搜一搜你心仪的宝贝(3s) / 100531=淘金币省钱等级考试(15s) / 99672=去芭芭农场领水果(5s) / 106513=拍立淘逛感兴趣的宝贝(5s) / 100340+100453=逛你喜欢的商品(15s，对应卡片上的个性化标题「好物沉浸看」「抢购超低价女款羽绒服」) / 106369 火爆连连消 / 106370 斗地主。⚠️「好物沉浸看」「抢购超低价女款羽绒服」这两个名字查不到独立 deliveryId（8917 的 40k-117k 号段扫了两遍共 8.7 万个 ID，命中集合里都没有），判定是浏览类任务的个性化展示标题，落点就是 100340/100453 这一类，所以拿它们代跑。noad/nohome=true，common.url=tb-temp.js。"
+ "_mine": "2026-10-23 10:40 第二轮测试：第一轮已证明「浮层页能计数、直跳不能」，且浮层页根本不打开落地页（源码：queryItem→倒计时 duration→scene.trigger）。⇒ 那么跳支付宝/快手/百度的任务也应该能靠浮层页拿到能量，这一轮就是验这个。16 步全走浮层页（纯 id + 单独秒数）。分组：支付宝 7 个 99653/99654/99660/99662/100985/106619/107483；快手百度 101121/101122；站内 99667 闲鱼/99728 一淘/99731 点淘/106358 点商品/106736 余额宝；主人点名 107860 你关注的商品都可抵（duration 15，给 25 秒）/ 106595 去惊喜好物逛一逛。⚠️ 90900 是空壳（assets 全空）不进；91225 要真开 88VIP 卡不进；101129 百度极速版与 101122 同类，先测 101122 一个代表。noad/nohome=true，common.url=tb-temp.js。"
 }

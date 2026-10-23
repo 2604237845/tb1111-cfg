@@ -62,8 +62,8 @@
 【A「双十一淘金币赛车任务」→ 8917 双11能量】
   nock.json = 配置（63 条 / 24 个任务 + 助力 + 菜单链接）
               2026-10-22 16:59 加回 106595
-              2026-10-23 09:45 开头加 106369 玩一玩火爆连连消 / 106370 玩斗地主打牌赢现金
-                            （完整地址型，各 12 秒；tb.js 同步加了完整地址支持）
+              2026-10-23 10:15 开头加 106369 玩一玩火爆连连消 / 106370 玩斗地主打牌赢现金
+                            （浮层页纯 id，wait=15 ≥ 各自 duration 5 秒）
   tb.js     = 脚本
   动作 #2 字典的 URL 和 fuc.url 两处都填同一串，二选一：
 
@@ -213,8 +213,14 @@ item 两种写法（nock.json / tb.js）
        "://m.duanqu.com?_ariver_appid=22129413&… 12"
        ↑ 第一段是完整地址（:// 开头 = 自动补 https 并套 tbopen），第二段纯数字是秒数
        taobao:// / alipays:// / sinaweibo:// 这类 App scheme 会原样放行不套壳
-     什么时候用②：任务落地页是独立地址、浮层页拼不出来的（小程序 / 小游戏 / 直播页）。
-     例子：106369 → m.duanqu.com（小程序），106370 → pages-fast…/ddz-ssr（斗地主 H5）。
+     什么时候用②：**只有当地址自己就带任务身份**时才用（如 9647 直播页带 tl_sceneId/tl_deliveryId，
+     落地页自己会调 scene.trigger/report）。8917 这类的 action 里**没有 deliveryId**，
+     落地页拿不到任务身份 ⇒ ②永远不计数，必须用①走浮层页。
+  🔴 2026-10-23 源码实证（tao-gold-srp-task-pop 的 index.chunk.js，3412 B）：
+     浮层页 = queryItem(sceneId,deliveryId) → 读 assets.duration → **本页倒计时 duration 秒**
+     → 调 mtop.taobao.pentaprism.scene.trigger（带 taskParams 的 implId/asac/fromToken）。
+     它**根本不打开落地页**，所以小程序、支付宝、小游戏类任务照样走①就能计数。
+     页面上的字就是「浏览本页面 N 秒后，可获得奖励」。
   🔴 ②只有新 tb.js 支持；老 tb.js 会把整串塞进 baseurl 的 deliveryId 位，地址就废了。
      所以 tb.js 和 nock.json 必须同版本一起发。纯数字 id 的输出与老 tb.js 逐字节一致（已实测）。
 

@@ -1,6 +1,6 @@
 {
  "activity": {
-  "tip": "🧪 赛车任务通道对比测试（8+7 = 15 步）\n---------------\n【前 8 步】浮层页（纯 id → tao-gold-srp-task-pop，各停 15 秒）\n  107016 搜一搜 / 100531 省钱等级考试 / 99672 芭芭农场\n  106513 拍立淘 / 100340+100453 逛你喜欢的商品\n  106369 火爆连连消 / 106370 斗地主\n【后 7 步】直跳（任务原始 assets.action，秒数按各自 duration 给足）\n---------------\n浮层页的原理：queryItem 拿到 duration → 本页倒计时 → 调 scene.trigger\n  ⇒ 它不打开落地页，所以对小程序/支付宝类任务也照样能计数。\n直跳的原理：只打开落地页，地址里没有 deliveryId\n  ⇒ 落地页拿不到任务身份，理论上不会计数（这次就是来验证这条）。\n---------------\n读结果：某个任务从 0 变 1/N 或 N/N，就说明「前 8 步」那条有效；\n前 8 步全没动、后 7 步之后才动，说明只有直跳有效。\n全程约 3 分 40 秒 · 必须配 tb-temp.js（动作 #193 填 tb-temp.js）\n",
+  "tip": "赛车通道测试 15 步\n---------------\n先浮层页 8 步，再直跳 7 步\n---------------\n点下面「开始测试」",
   "vvv": 1,
   "noad": true,
   "nohome": true,
@@ -34,7 +34,7 @@
    "type": "task1",
    "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
    "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
-   "endMessage": "测试结束，回去看这几个任务涨了哪几个",
+   "endMessage": "测试结束",
    "task": {
     "tag": "temp369",
     "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",

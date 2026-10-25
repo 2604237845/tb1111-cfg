@@ -489,3 +489,15 @@ item 两种写法（nock.json / tb.js）
   https://ghproxy.net/https://raw.githubusercontent.com/2604237845/tb1111-cfg/main/
 
 2026-10-20：CK 模式（ck.json / ck.js / tbck.js）已删除，只保留无 CK 版。
+
+🔴 2026-10-26 00:12 更正：自有域名**带 ?query 的请求现在会 404**
+-------------------------------------------------
+  实测 `https://tb1111-cfg2.app.workbuddy.host/hhle.json?x=179290852` → **HTTP 404**，
+  同一个文件不带参数 → 正常返回新内容。
+  ⇒ 上面「加 ?t= 打源站」那套校验法**已经不能用了**。
+  现在的正确校验姿势：
+      ① 裸地址直读，比 sha（缓存过期后自然就是新的，一般 1~3 分钟）
+      ② 想确认源站是不是最新 → 查 GitHub API：
+         gh api repos/2604237845/tb1111-cfg/contents/<文件名> 然后 base64 还原比字节
+  三源实测顺序（2026-10-26 00:12）：自有域名 最快生效；jsdelivr 次之；
+  gh-proxy 最慢（它自己的 max-age=60，但上游 raw.githubusercontent.com 有约 5 分钟缓存）。

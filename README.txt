@@ -145,6 +145,9 @@
               2026-10-24 10:19 删 101866 / 107544 两个隐藏位（ignore=true、assets 被剥空、无标题无跳转，
                             跑也空跑）⇒ 62 条/23 任务 → 60 条/21 任务；展开 98 步 → 95 步，1132 秒 → 1097 秒
                             nock.json 4297 B  sha256 0c4680b0cb191702
+              2026-10-25 10:55 换助力码 jWr2nh3 → **jVVrCGw**（https://m.tb.cn/h.jVVrCGw），
+                            只动 3 处：mine.help / task.before[0].url / _mine 备注；字节 4297 不变
+                            nock.json 4297 B  sha256 242b15e6cbecf134（nock2.json 同步成同内容）
   tb.js     = 脚本
   动作 #2 字典的 URL 和 fuc.url 两处都填同一串，二选一：
 

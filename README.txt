@@ -148,6 +148,11 @@
               2026-10-25 10:55 换助力码 jWr2nh3 → **jVVrCGw**（https://m.tb.cn/h.jVVrCGw），
                             只动 3 处：mine.help / task.before[0].url / _mine 备注；字节 4297 不变
                             nock.json 4297 B  sha256 242b15e6cbecf134（nock2.json 同步成同内容）
+  🧪 赛车测试配置 temp8917.json（2026-10-25 重建为「11 个隐藏位专测」）
+    aHR0cHM6Ly90YjExMTEtY2ZnMi5hcHAud29ya2J1ZGR5Lmhvc3QvdGVtcDg5MTcuanNvbg==
+    内容：99726/99888/100447/101866/106369/106370/106568/107139/107544/107900/108168
+    全是 ignore=true、assets 被剥空的投放位，纯 id 走浮层页，wait=18，11 步约 4 分钟
+    ⚠️ 必须把动作 #193 的脚本换成 tb-temp.js（正式配置用 tb.js）
   tb.js     = 脚本
   动作 #2 字典的 URL 和 fuc.url 两处都填同一串，二选一：
 
@@ -158,7 +163,16 @@
   aHR0cHM6Ly9naC1wcm94eS5jb20vaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tLzI2MDQyMzc4NDUvdGIxMTExLWNmZy9tYWluL25vY2suanNvbg==
 
 【B「双十一直播寻宝中国」→ 9647 寻宝中国】
-  hhle.json = 配置（71 条 / 19 个任务）    hhle.js = 脚本
+  hhle.json = 配置（74 条 / 20 个任务）    hhle.js = 脚本
+  · 2026-10-25 11:40：删 108164 逛一逛小小疯直播间（config_not_exists，10-24 23:59:59 到期）；
+    加 107828【限时】逛精品直播间 ×1（到期 10-27）+ 107890【限时】逛精品直播间 ×3（到期 10-31）
+    ⇒ 71 条/19 任务 → 74 条/20 任务；hhle.json 12412 B sha 98ef86b495e05e28
+
+  🧪 寻宝测试配置（新建）temp9647.json —— 3 个「站内换量」任务
+    aHR0cHM6Ly90YjExMTEtY2ZnMi5hcHAud29ya2J1ZGR5Lmhvc3QvdGVtcDk2NDcuanNvbg==
+    内容：97864 去农场1分钱领水果 / 101109 双11来淘金币狂享20亿 / 106079 逛逛换量任务
+    都是 VISIT + duration=5 + need=1，用各自 jumpUrl 加 tl_sceneId/tl_deliveryId/tl_action=TRAFFIC_EXCHANGE，wait=15
+    脚本用同一个 hhle.js（动作176 不用换）
   · 2026-10-23 09:23：删 107969 刘维（已下架）；99323 李佳琦（人群不符）挪到最后一条试
   · 2026-10-24 08:15：删 9 个下架任务（17 条）、加 8 个新任务（12 条）→ 71 条 / 19 任务
     （明细见上面 08:15 那条，以及 tb1111-cfg2-bak/寻宝中国-全量核查-20261024.md）

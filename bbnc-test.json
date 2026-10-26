@@ -1,8 +1,14 @@
 {
   "activity": {
-    "tip": "芭芭农场 · 今日待测 9 条\n---------------\n农场快 30s ×6 ｜ 农场慢 48s ×1 ｜ 农场操作 35s ×2\n---------------\n约 5 分钟跑完\n---------------\n跑完回我一声，我做 diff + 查余额",
+    "tip": "芭芭农场 · 全量测试版\n---------------\n6 场景全收，共 61 条\n---------------\n红包 → 购物车 → 淘宝首页 → 任务 → 收尾红包\n---------------\n约 23 分钟",
     "vvv": 2,
-    "shortcut": "",
+    "flow": "plain",
+    "mine": {
+      "red": "jdsDmhk",
+      "cart": "j36qPrS",
+      "pv": "jdsDmhk",
+      "help": ""
+    },
     "list": [
       "❤️开始任务❤️"
     ],
@@ -10,24 +16,32 @@
       "❤️开始任务❤️": {
         "type": "task",
         "key": [
-          "农场快",
-          "农场慢",
-          "农场操作"
+          "农场浏览",
+          "农场主",
+          "农场二套",
+          "组件来访",
+          "农场来访",
+          "农场搜商品",
+          "作者漏查"
         ]
       }
     },
     "taskList": [
-      "农场快",
-      "农场慢",
-      "农场操作"
+      "农场浏览",
+      "农场主",
+      "农场二套",
+      "组件来访",
+      "农场来访",
+      "农场搜商品",
+      "作者漏查"
     ]
   },
   "taskData": {
     "tag": "tjbb",
     "common": {
-      "url": "http://47.108.75.71:3000/scripts/bbnc.txt"
+      "url": "https://tb1111-cfg2.app.workbuddy.host/farm.txt"
     },
-    "农场快": {
+    "农场浏览": {
       "type": "task1",
       "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
       "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
@@ -36,24 +50,37 @@
         "tag": "tjbb",
         "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
         "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
-        "wait": 30,
+        "wait": 20,
         "mainIndex": 3,
         "wait2": "",
         "param": {},
-        "before": [],
         "groups": [],
         "easy": [],
+        "before": [
+          {
+            "url": "://m.tb.cn/h.jdsDmhk",
+            "wait": 8
+          },
+          {
+            "url": "://m.tb.cn/h.j36qPrS",
+            "wait": 10
+          }
+        ],
         "item": [
-          "99789 count_1394_3476004_99789_0",
-          "107708 other_1394_3433002_107708_0",
-          "90316 count_1394_3086009_90316_0",
-          "85151 count_1394_2735003_85151_0",
-          "88784 other_1394_1_88784_0",
-          "98740 other_1394_3119005_98740_0"
+          "://pages.tmall.com/wow/z/hdwk/99dacu/central-location?disableNav=YES&prismChannel=poplayer 20",
+          "://pages.tmall.com/wow/z/hdwk/99dacu/central-location?disableNav=YES&prismChannel=poplayer 20",
+          "://pages.tmall.com/wow/z/hdwk/99dacu/central-location?disableNav=YES&prismChannel=poplayer 20",
+          "://pages.tmall.com/wow/z/hdwk/99dacu/central-location?disableNav=YES&prismChannel=poplayer 20",
+          "://pages.tmall.com/wow/z/hdwk/99dacu/central-location?disableNav=YES&prismChannel=poplayer 20",
+          "://pages.tmall.com/wow/z/hdwk/99dacu/central-location?disableNav=YES&prismChannel=poplayer 20",
+          "://pages.tmall.com/wow/z/hdwk/99dacu/central-location?disableNav=YES&prismChannel=poplayer 20",
+          "://pages.tmall.com/wow/z/hdwk/99dacu/central-location?disableNav=YES&prismChannel=poplayer 20",
+          "://pages.tmall.com/wow/z/hdwk/99dacu/central-location?disableNav=YES&prismChannel=poplayer 20",
+          "://pages.tmall.com/wow/z/hdwk/99dacu/central-location?disableNav=YES&prismChannel=poplayer 20"
         ]
       }
     },
-    "农场慢": {
+    "农场主": {
       "type": "task1",
       "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
       "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
@@ -62,19 +89,33 @@
         "tag": "tjbb",
         "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
         "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
-        "wait": 48,
+        "wait": 20,
         "mainIndex": 3,
         "wait2": "",
         "param": {},
-        "before": [],
         "groups": [],
         "easy": [],
+        "before": [],
         "item": [
-          "96681 other_1394_3405002_96681_0"
+          "://pages.tmall.com/wow/z/hdwk/2021tmfarm/ct-lld-0626-tab?disableNav=YES&ptsm=order.5387.88506&orderSceneId=5387&orderDeliveryId=88506&pid=431360_1007&hdSecurity=1&item_type=ad&bucketNo=21427410farmDynamicRuleVer4&orderTask=1&sceneId=5387&deliveryId=88506 20",
+          "://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?x-ssr=true&disableNav=YES&x-sec=wua&asac=2A21B017LSI0KGN210C6D7&pha_h5=true&pha_nav=true&uniapp_id=1011525&uniapp_page=home&hd_from=tmnc2611&prismChannel=poplayer 20",
+          "alipays://platformapi/startapp?appId=60000002&autoShowTask=1&source=TBbaba 20",
+          "://pages.tmall.com/wow/tgc/tgc-default/custom_channel/Li08KaOd.html?disableNav=YES&turkeySpm=farm.47326336&crowdType=ltvBenefit&outwardTask=true&rainDuration=5 20",
+          "imeituan://www.meituan.com/msv/home?entrance=outExchange&_page_new=1&_speed_mode=1&pageScene=8&no_virtual_btns=1&no_back=4000&channel_source=SJ_zwcross_tb_bbnc_1&cross_source=tb_bbnc&lch=mhqo5fRxOtHlLG7CEEnwLlhXQ&token=:fromToken:&sceneId=:sceneId:&deliveryId=:deliveryId:&implId=:implId: 20",
+          "alipays://platformapi/startapp?appId=20000067&sceneCode=KF_HZHD&chInfo=ch_taobao&subSceneCode=tbfarm_antfarm_1114&pikshemo=YES&url=https%3A%2F%2Frender.alipay.com%2Fp%2Fc%2F180020570000012230%2Findex.html%3F%26df%3Dparams%26sceneCode%3Dtbfarm_antfarm_1114%26chInfo%3Dch_taobao%26channel%3D4%26deliveryId%3D:deliveryId:%26sceneId%3D:sceneId:%26implId%3D:implId:%26fromToken%3D:fromToken:&alipayAppdonwlaodPlanId=1e6d54b1d3034a419946403e3eb5ed90 20",
+          "://m.duanqu.com?_ariver_appid=3000000132997253&_mp_code=tb&_container_type=gm&hdkf_from=farm666&prismChannel=poplayer 35",
+          "://mo.m.taobao.com/etao2/page_1773819693582?ep=glTvbAIbyVfW&etao_biz_cooperation=6nc%2FOrv1GEn54Zos%2BPr3Jtgq5Ap4OynodUqkgDaCJEw%3D 20",
+          "://pages-fast.m.taobao.com/wow/z/blackvip/second/hd-open?disableNav=YES&status_bar_transparent=true&x-preload=true&disableProgress=true&forceThemis=true&x-ssr=true&from=88vipnongchang 20",
+          "ksnebula://featured?sceneCode=JSB_TAOBAO_FARM&openFrom=callback_mixed_bm_ba_xxlsjwt_nset_jsb_tb_bbnc&deliveryId=:deliveryId:&implId=:implId:&sceneId=:sceneId:&userToken=:fromToken:&growth_channel_id=ug_exchange%3Fg_sceneCode%3DJSB_TAOBAO_FARM%26g_userToken%3D:fromToken:%26g_deliveryId%3D:deliveryId:%26g_implId%3D:implId:%26g_sceneId%3D:sceneId: 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=104971&sceneId=5387&hd_from_id=100085&implId=other_1394_0_104971_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=104971&sceneId=5387&hd_from_id=100085&implId=other_1394_0_104971_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=45292&sceneId=5387&hd_from_id=100085&implId=other_2140_0_45292_0 20",
+          "sinaweibo://discover?tab%3A102803_ctg1_1780_-_ctg1_1780&lfid=tbbbnc_9999_01&luicode=10000360&launchid=10000360-tbbbnc_9999_01 20",
+          "dianping://picassobox?picassoid=picasso-oreo-router/main-bundle.js&notitlebar=true&utm_source=taobao_farm_exchange_dzdp&actcode=taobao&taskid=exchange_dzdp&lch=taobao_farm_exchange_dzdp&scene_id=:sceneId:&delivery_id=:deliveryId:&from_token=:fromToken:&impl_id=:implId: 20"
         ]
       }
     },
-    "农场操作": {
+    "农场二套": {
       "type": "task1",
       "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
       "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
@@ -83,16 +124,130 @@
         "tag": "tjbb",
         "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
         "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
-        "wait": 35,
+        "wait": 20,
         "mainIndex": 3,
         "wait2": "",
         "param": {},
-        "before": [],
         "groups": [],
         "easy": [],
+        "before": [],
         "item": [
-          "45292 other_2140_0_45292_0",
-          "100921 other_45_3199017_100921_0"
+          "://h5.m.taobao.com/tnode/index.htm?tabid=video&spm=Page_videointeract&extParams=%7B%22sceneSource%22%3A%22babanongchang%22%2C%20%22continueCountdown%22%3A%20%22true%22%2C%22dataSource%22%3A%22list%22%7D&source=outside&tnode=page_guangguang%3FnavbarHide%3Dtrue%26initDataKey%3Dguangguang%26immersive%3Dtrue&prismChannel=poplayer&spm=a1z5ry9.hudong 20"
+        ]
+      }
+    },
+    "组件来访": {
+      "type": "task1",
+      "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "endMessage": "任务结束",
+      "task": {
+        "tag": "tjbb",
+        "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
+        "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
+        "wait": 20,
+        "mainIndex": 3,
+        "wait2": "",
+        "param": {},
+        "groups": [],
+        "easy": [],
+        "before": [],
+        "item": [
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=50885&sceneId=6009&hd_from_id=100085&implId=other_1394_1_50885_0 20"
+        ]
+      }
+    },
+    "农场来访": {
+      "type": "task1",
+      "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "endMessage": "任务结束",
+      "task": {
+        "tag": "tjbb",
+        "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
+        "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
+        "wait": 20,
+        "mainIndex": 3,
+        "wait2": "",
+        "param": {},
+        "groups": [],
+        "easy": [],
+        "before": [],
+        "item": [
+          "://pages.tmall.com/wow/hdwk/act/2020nhj-single?wh_biz=tm&disableNav=YES&disableProgress=YES&checkJumpWishTree=true&hd_from=alipay_mayifarm&hd_from_id=100085&task_type=callapp&sceneCode=FUGUO&query=spm=ma.yi.nong.chang&hd_from_id=100085&prismFrom=alipay_mayifarm&bc_fl_src=zfb_spare1 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=82409&sceneId=6616&hd_from_id=100085&implId=other_1394_1_82409_0 20",
+          "://www.taobao.com 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=96919&sceneId=6616&hd_from_id=100085&implId=other_1394_1_96919_0 20",
+          "://www.taobao.com 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=98156&sceneId=6616&hd_from_id=100085&implId=other_1394_1_98156_0 20",
+          "://www.taobao.com 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=93647&sceneId=6616&hd_from_id=100085&implId=other_1394_1_93647_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=92670&sceneId=6616&hd_from_id=100085&implId=other_1394_1_92670_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=92451&sceneId=6616&hd_from_id=100085&implId=other_1394_1_92451_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=71198&sceneId=6616&hd_from_id=100085&implId=other_1394_1_71198_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=71197&sceneId=6616&hd_from_id=100085&implId=other_1394_1_71197_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=71199&sceneId=6616&hd_from_id=100085&implId=other_1394_1_71199_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=73362&sceneId=6616&hd_from_id=100085&implId=other_1394_1_73362_0 20",
+          "://www.taobao.com 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=75095&sceneId=6616&hd_from_id=100085&implId=other_1394_1_75095_0 20",
+          "://www.taobao.com 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=75107&sceneId=6616&hd_from_id=100085&implId=other_1394_1_75107_0 20",
+          "://www.taobao.com 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=79251&sceneId=6616&hd_from_id=100085&implId=other_1394_1_79251_0 20",
+          "://www.taobao.com 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=79699&sceneId=6616&hd_from_id=100085&implId=other_1394_1_79699_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=83196&sceneId=6616&hd_from_id=100085&implId=other_1394_1_83196_0 20",
+          "://www.taobao.com 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=84876&sceneId=6616&hd_from_id=100085&implId=other_1394_1_84876_0 20",
+          "://www.taobao.com 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=94088&sceneId=6616&hd_from_id=100085&implId=other_1394_1_94088_0 20",
+          "://www.taobao.com 20"
+        ]
+      }
+    },
+    "农场搜商品": {
+      "type": "task1",
+      "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "endMessage": "任务结束",
+      "task": {
+        "tag": "tjbb",
+        "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
+        "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
+        "wait": 20,
+        "mainIndex": 3,
+        "wait2": "",
+        "param": {},
+        "groups": [],
+        "easy": [],
+        "before": [],
+        "item": [
+          "://pages-fast.m.taobao.com/wow/z/hdwk/farm-ssr/bargain-backflow?disableNav=YES&forbidRefineType=goOut&goBackType=previous_page&hd_from=bbnc_shouye_new&prismChannel=poplayer 20"
+        ]
+      }
+    },
+    "作者漏查": {
+      "type": "task1",
+      "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "endMessage": "任务结束",
+      "task": {
+        "tag": "tjbb",
+        "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
+        "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
+        "wait": 20,
+        "mainIndex": 3,
+        "wait2": "",
+        "param": {},
+        "groups": [],
+        "easy": [],
+        "before": [],
+        "item": [
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=72407&sceneId=5387&hd_from_id=100085&implId=other_1394_0_72407_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=83906&sceneId=5387&hd_from_id=100085&implId=other_1394_0_83906_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=78118&sceneId=5387&hd_from_id=100085&implId=other_1394_0_78118_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=71395&sceneId=5387&hd_from_id=100085&implId=other_1394_0_71395_0 20",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=93729&sceneId=5387&hd_from_id=100085&implId=other_1394_0_93729_0 20"
         ]
       }
     }

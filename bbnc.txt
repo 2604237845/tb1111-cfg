@@ -1,0 +1,176 @@
+function run () {
+    var pvStr = 'jc2hRWO';
+    var endStr = 'jex2zTH';
+    var data = [];
+    var More = configValue ? configValue : 1;
+
+    var taobaoScheme = {
+      scheme:"taobao",
+      main:"taobao://m.taobao.com/tbopen/index.html?h5Url=https://m.taobao.com",
+      start: "taobao://m.tb.cn/h." + pvStr,
+      end:"taobao://m.tb.cn/h." + endStr,
+      
+    }
+    
+    var schemes = {
+      1:[taobaoScheme],
+    }
+    var scheme = schemes[More]
+    var taskList = DATA.activity.taskList
+
+
+    taskList = taskList.map((v) => DATA.taskData[v]);
+
+    scheme.map((s) => {
+
+      taskList.map((oneTask) => {
+        var groups = []
+        var easy = []
+        easy = oneTask.task.easy
+        var itme = oneTask.task.item;
+        groups = oneTask.task.groups;
+        var groupurl = oneTask.task.groupurl;
+        var before = oneTask.task.before;
+        var baseUrl = oneTask.task.baseurl
+        var wait = oneTask.task.wait
+        var paramObj = oneTask.task.param
+        var mainIndex = 2
+        if(oneTask.task.mainIndex){
+          mainIndex = oneTask.task.mainIndex
+        } 
+
+        //start
+
+        if (s && s.end){
+          data.push({
+            url:s.end,
+            wait:8
+          })
+        }
+        if (s && s.start){
+          data.push({
+            url:s.start,
+            wait:5
+          })
+        }
+        
+
+
+        //before
+        before.map((v,i) => {
+          data.push({
+            url: s.type ? s.scheme + encodeURIComponent('https' + v.url):s.scheme + v.url,
+            wait:v.wait
+          })
+          
+        })
+        data.push({
+          url:s.main,
+          wait:5
+        })
+
+        groups.map((v,i) => {
+            var gWait = v.wait
+            var gUrl = v.url
+            var gParams = gUrl.split('_')
+            var gUrlNum = gParams[gParams.length - 1]
+            var gDid = gParams[gParams.length - 2]
+            
+            for (let i = gUrlNum; i >= 0; i -- ){
+                gParams[gParams.length - 1] = i
+                var iId = gParams.join('_')
+                data.push({
+                    url:s.scheme + groupurl + "&deliveryId=" + gDid + "&implId=" + iId ,
+                    wait: i == 0  ? 22 : gWait
+                })
+            }
+             data.push({
+              url:s.main,
+              wait:5
+            })
+
+        })
+
+        //任务
+        itme.map((v,i) => {
+
+          var str = v;
+          var params = str.split(' ');
+          var url = baseUrl;
+
+
+          for (var key in paramObj){
+
+            var paramArr = paramObj[key]
+            var reg = new RegExp(`${key}`,'g')
+            var str = paramArr[Math.floor((Math.random()*paramArr.length))]
+            url = url.replace(reg,str);
+          }
+          //替换参数2
+          params.map((v,i) => {
+            if (v){
+              var num = i+1;
+              var reg = new RegExp(`占位参数${num}`,'g')
+              url = url.replace(reg,v);
+            }
+          });
+
+          data.push({
+            url:s.type ? s.scheme + encodeURIComponent('https' + url):s.scheme + url,
+            wait:wait
+          })
+
+          if ((i+1)%mainIndex === 0){
+            data.push({
+              url:s.main,
+              wait:5
+            })
+          }
+        })
+        easy.map((v,i) => {
+            var ewait = v.wait
+            var eurl = v.url 
+            var ids = []
+            ids = v.ids
+            ids.map((v,index) => {
+                data.push({
+                    url:s.scheme + eurl + "&deliveryId=" + v ,
+                    wait: ewait
+                })
+                if ((index+1)%mainIndex === 0){
+                    data.push({
+                    url:s.main,
+                    wait:5
+                    })
+                }
+            })
+            data.push({
+              url:s.main,
+              wait:5
+            })
+        })
+        
+
+
+        if (s && s.end){
+          data.push({
+            url:s.end,
+            wait:5
+          })
+        }
+
+
+      })
+    })
+
+    if (runNum > 0 && runNum != 1){
+      data = data.splice(runNum - 1,data.length);
+    }
+
+    var dd = {
+      succes: 'ok',
+      data:data
+    };
+
+    return JSON.stringify(dd);
+  };

@@ -180,11 +180,12 @@ function run () {
                         wait:8
                     })
                 }
-                data.push({
-                    url:s.main,
-                    wait:5
-                })
             }
+            // 🔴 淘宝首页：两种流程都保留（红包 → 购物车 → 淘宝首页 → 任务 → 收尾红包）
+            data.push({
+                url:s.main,
+                wait:5
+            })
 
             //任务
             itme.map((v,i) => {

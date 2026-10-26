@@ -99,6 +99,7 @@ function run () {
         } catch (e) { }
     })();
 
+    var FLOW = String((DATA.activity && DATA.activity.flow) || 'full').toLowerCase();
     var pvStr = MINE.pv;
     var endStr = MINE.red;
     var data = [];
@@ -163,24 +164,27 @@ function run () {
 
             })
 
-            //start  → 超级红包（第二个）
-            if (s && s.end){
+            // 🔴 流程开关：activity.flow
+            //    "plain" = 红包 → 购物车 → 任务 → 收尾红包（主人要的顺序）
+            //    其他/缺省 = 老顺序（before → 红包 → 蓄水 → 淘宝首页 → 任务 → 红包）
+            if (FLOW !== 'plain') {
+                if (s && s.end){
+                    data.push({
+                        url:s.end,
+                        wait:10
+                    })
+                }
+                if (s && s.start){
+                    data.push({
+                        url:s.start,
+                        wait:8
+                    })
+                }
                 data.push({
-                    url:s.end,
-                    wait:10
+                    url:s.main,
+                    wait:5
                 })
             }
-            //快消蓄水期（第三个）
-            if (s && s.start){
-                data.push({
-                    url:s.start,
-                    wait:8
-                })
-            }
-            data.push({
-                url:s.main,
-                wait:5
-            })
 
             //任务
             itme.map((v,i) => {

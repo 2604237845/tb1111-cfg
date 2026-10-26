@@ -25,7 +25,7 @@ function run () {
 
     scheme.map((s) => {
 
-      taskList.map((oneTask) => {
+      taskList.map((oneTask, tIdx) => {
         var groups = []
         var easy = []
         easy = oneTask.task.easy
@@ -43,15 +43,18 @@ function run () {
 
         // 🔴 开场不再插红包/蓄水（主人流程：红包 → 购物车 → 淘宝首页 → 任务 → 收尾红包）
 
-        //before
-        before.map((v,i) => {
-          data.push({
-            url: s.type ? s.scheme + encodeURIComponent('https' + v.url):s.scheme + v.url,
-            wait:v.wait
+        //before —— 只有第 1 块跑「红包 → 购物车」；其余块一律跳过（主人令：不许重复）
+        if (tIdx === 0) {
+          before.map((v,i) => {
+            data.push({
+              url: s.type ? s.scheme + encodeURIComponent('https' + v.url):s.scheme + v.url,
+              wait:v.wait
+            })
+
           })
-          
-        })
-        if (FLOW !== 'bare') {
+        }
+        //块首回淘宝首页：每块都留，但上一步已经是首页就跳过（不重复跑）
+        if (FLOW !== 'bare' && !(data.length && data[data.length-1].url === s.main)) {
           data.push({
             url:s.main,
             wait:5
@@ -145,7 +148,8 @@ function run () {
         
 
 
-        if (s && s.end && FLOW !== 'bare'){
+        //收尾红包 —— 只有最后 1 块出一次
+        if (s && s.end && FLOW !== 'bare' && tIdx === taskList.length - 1){
           data.push({
             url:s.end,
             wait:5

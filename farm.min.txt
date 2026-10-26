@@ -1,0 +1,208 @@
+function run () {
+    if (!DATA || !DATA.activity || Object.prototype.toString.call(DATA.activity.taskList) !== '[object Array]') {
+        return JSON.stringify({ succes: 'ok', data: [] });
+    }
+    var RE_LINK = /(?:https?:\/\/)?(?:m\.tb\.cn\/h\.)([A-Za-z0-9]{5,12})(?![A-Za-z0-9])/;
+    function parseLink(v) {
+        var s = String(v == null ? '' : v).replace(/^\s+|\s+$/g, '');
+        if (!s) return null;
+        var m = s.match(RE_LINK);
+        if (m) return { code: m[1], tail: s.slice(m.index + m[0].length) };
+        if (/^[A-Za-z0-9]{5,12}$/.test(s)) return { code: s, tail: '' };
+        return null;
+    }
+    var MINE = (function () {
+        var DEF = { red: 'jdsDmhk', cart: 'j36qPrS', pv: 'j36qPrS', help: '' };
+        var m = (DATA && DATA.activity && DATA.activity.mine) || {};
+        var keys = ['red', 'cart', 'pv', 'help'];
+        var r = {};
+        for (var i = 0; i < keys.length; i++) {
+            var p = parseLink(m[keys[i]]);
+            if (!p && DEF[keys[i]]) p = { code: DEF[keys[i]], tail: '' };
+            r[keys[i]] = p ? p.code : '';
+            r[keys[i] + 'Url'] = p ? ('://m.tb.cn/h.' + p.code + p.tail) : '';
+        }
+        r.codes = [];
+        for (var j = 0; j < keys.length; j++) { if (r[keys[j]]) r.codes.push(r[keys[j]]); }
+        var extra = m.codes;
+        if (Object.prototype.toString.call(extra) === '[object Array]') {
+            for (var k = 0; k < extra.length; k++) {
+                var pe = parseLink(extra[k]);
+                if (pe && r.codes.indexOf(pe.code) < 0) r.codes.push(pe.code);
+            }
+        }
+        return r;
+    })();
+    (function () {
+        function isMine(c) { return MINE.codes.indexOf(c) >= 0; }
+        function bare(u, defCode) {
+            var p = parseLink(u);
+            if (!p) return u;
+            return '://m.tb.cn/h.' + (isMine(p.code) ? p.code : defCode) + p.tail;
+        }
+        function app(u, defCode) {
+            var p = parseLink(u);
+            if (!p) return u;
+            return 'taobao://m.tb.cn/h.' + (isMine(p.code) ? p.code : defCode) + p.tail;
+        }
+        function fmt(u) {
+            var p = parseLink(u);
+            if (!p) return u;
+            return '://m.tb.cn/h.' + p.code + p.tail;
+        }
+        try {
+            var act = DATA.activity || {};
+            var mp = act.mapping || {};
+            for (var k in mp) {
+                if (!mp[k] || typeof mp[k].url !== 'string') continue;
+                var def = String(k).indexOf('购物车') >= 0 ? MINE.cart : MINE.red;
+                mp[k].url = app(mp[k].url, def);
+            }
+            var tl = act.taskList || [];
+            for (var i = 0; i < tl.length; i++) {
+                var tk = (DATA.taskData[tl[i]] || {}).task;
+                if (!tk) continue;
+                var bl = tk.before;
+                if (Object.prototype.toString.call(bl) !== '[object Array]') bl = [];
+                var out = [];
+                for (var j = 0; j < bl.length; j++) {
+                    var b = bl[j];
+                    if (typeof b === 'string') b = { url: b, wait: 8 };
+                    if (!b || typeof b !== 'object') continue;
+                    if (typeof b.url !== 'string' || !b.url) continue;
+                    out.push({ url: MINE.helpUrl ? MINE.helpUrl : fmt(b.url), wait: b.wait || 8 });
+                }
+                if (!out.length && MINE.helpUrl) out.push({ url: MINE.helpUrl, wait: 8 });
+                tk.before = out;
+            }
+        } catch (e) { }
+    })();
+    var FLOW = String((DATA.activity && DATA.activity.flow) || 'full').toLowerCase();
+    var pvStr = MINE.pv;
+    var endStr = MINE.red;
+    var data = [];
+    var More = configValue ? configValue : 1;
+    var taobaoScheme = {
+        scheme:"taobao",
+        main:"taobao://m.taobao.com/tbopen/index.html?h5Url=https://m.taobao.com",
+        start: "taobao://m.tb.cn/h." + pvStr,
+        end:"taobao://m.tb.cn/h." + endStr,
+    }
+    var ttScheme = {
+        scheme:"taobaolite://m.ltao.com/open/index.html?action=ali.open.nav&h5Url=",
+        main:"taobaolite://m.ltao.com/open/index.html?action=ali.open.nav&h5Url=https%3A%2F%2Fm.ltao.com%2Fhomepage%23mallPage",
+        start: "taobao://m.taobao.com/tbopen/index.html?h5Url=https://m.tb.cn/h." + pvStr,
+        end:"taobao://m.taobao.com/tbopen/index.html?h5Url=https://m.tb.cn/h." + endStr,
+        type:"url"
+    }
+    var schemes = {
+        1:[taobaoScheme],
+        2:[ttScheme]
+    }
+    var scheme = schemes[More]
+    var taskList = DATA.activity.taskList
+    function isFullUrl(u) {
+        return u.indexOf('://') === 0 || /^[A-Za-z][A-Za-z0-9+.\-]*:\/\//.test(u);
+    }
+    function wrapFull(u) {
+        if (/^(taobao|taobaolite|tmall|alipays|alipay|sinaweibo|ksnebula|baiduboxapp|baiduboxlite):\/\//i.test(u)) return u;
+        if (u.indexOf('://') === 0) u = 'https' + u;
+        return 'taobao://m.taobao.com/tbopen/index.html?h5Url=' + encodeURIComponent(u);
+    }
+    taskList = taskList.map((v) => DATA.taskData[v]).filter((v) => !!v);
+    scheme.map((s) => {
+        taskList.map((oneTask) => {
+            var _t = oneTask.task || {};
+            var itme = _t.item || [];
+            var before = _t.before || [];
+            var baseUrl = _t.baseurl
+            var wait = _t.wait
+            var paramObj = _t.param
+            before.map((v,i) => {
+                data.push({
+                    url: s.type ? s.scheme + encodeURIComponent('https' + v.url):s.scheme + v.url,
+                    wait:v.wait
+                })
+            })
+            if (FLOW === 'full') {
+                if (s && s.end){
+                    data.push({
+                        url:s.end,
+                        wait:10
+                    })
+                }
+                if (s && s.start){
+                    data.push({
+                        url:s.start,
+                        wait:8
+                    })
+                }
+            }
+            if (FLOW !== 'bare') {
+                data.push({
+                    url:s.main,
+                    wait:5
+                })
+            }
+            itme.map((v,i) => {
+                var str = v;
+                var params = str.split(' ');
+                if (params[0] && isFullUrl(params[0])) {
+                    var fw = wait;
+                    if (params.length > 1 && /^\d+$/.test(params[1])) { fw = parseInt(params[1], 10); }
+                    data.push({
+                        url: wrapFull(params[0]),
+                        wait: fw
+                    })
+                    if (i%2 === 0 && FLOW !== 'bare'){
+                        data.push({
+                            url:s.main,
+                            wait:5
+                        })
+                    }
+                    return;
+                }
+                var url = baseUrl;
+                for (var key in paramObj){
+                    var paramArr = paramObj[key]
+                    var reg = new RegExp(`${key}`,'g')
+                    var str = paramArr[Math.floor((Math.random()*paramArr.length))]
+                    url = url.replace(reg,str);
+                }
+                params.map((v,i) => {
+                    if (v){
+                        var num = i+1;
+                        var reg = new RegExp(`占位参数${num}`,'g')
+                        url = url.replace(reg,v);
+                    }
+                });
+                var thisWait = wait;
+                if (params.length > 1 && /^\d+$/.test(params[1])) { thisWait = parseInt(params[1], 10); }
+                data.push({
+                    url:s.type ? s.scheme + encodeURIComponent('https' + url):s.scheme + url,
+                    wait:thisWait
+                })
+                if (i%2 === 0 && FLOW !== 'bare'){
+                    data.push({
+                        url:s.main,
+                        wait:5
+                    })
+                }
+            })
+            if (s && s.end && FLOW !== 'bare'){
+                data.push({
+                    url:s.end,
+                    wait:5
+                })
+            }
+        })
+    })
+    if (runNum > 0 && runNum != 1){
+        data = data.splice(runNum - 1,data.length);
+    }
+    var dd = {
+        succes: 'ok',
+        data:data
+    };
+    return JSON.stringify(dd);
+};

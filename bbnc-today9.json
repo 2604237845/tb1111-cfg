@@ -1,8 +1,13 @@
 {
   "activity": {
-    "tip": "芭芭农场 · 9 条（次数已按 maxTimes 做满）\n---------------\n停留 = 服务端 duration + 5 秒\n---------------\n约 3.5 分钟\n---------------\n跑完回我一声",
+    "tip": "芭芭农场 · 今日 9 条（每条自带落地页）\n---------------\n流程：红包 → 购物车 → 红包 → 淘宝 → 任务… → 红包\n---------------\n约 5 分钟\n---------------\n跑完回我一声",
     "vvv": 2,
-    "shortcut": "",
+    "mine": {
+      "red": "jdsDmhk",
+      "cart": "j36qPrS",
+      "pv": "jdsDmhk",
+      "help": ""
+    },
     "list": [
       "❤️开始任务❤️"
     ],
@@ -10,22 +15,20 @@
       "❤️开始任务❤️": {
         "type": "task",
         "key": [
-          "农场_20s",
-          "农场_35s"
+          "农场"
         ]
       }
     },
     "taskList": [
-      "农场_20s",
-      "农场_35s"
+      "农场"
     ]
   },
   "taskData": {
     "tag": "tjbb",
     "common": {
-      "url": "https://tb1111-cfg2.app.workbuddy.host/bbnc.txt"
+      "url": "https://tb1111-cfg2.app.workbuddy.host/farm.txt"
     },
-    "农场_20s": {
+    "农场": {
       "type": "task1",
       "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
       "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
@@ -38,39 +41,28 @@
         "mainIndex": 3,
         "wait2": "",
         "param": {},
-        "before": [],
         "groups": [],
         "easy": [],
+        "before": [
+          {
+            "url": "://m.tb.cn/h.jdsDmhk",
+            "wait": 8
+          },
+          {
+            "url": "://m.tb.cn/h.j36qPrS",
+            "wait": 10
+          }
+        ],
         "item": [
-          "99789 count_1394_3476004_0",
-          "107708 other_1394_3433002_0",
-          "90316 count_1394_3086009_0",
-          "85151 count_1394_2735003_0",
-          "88784 other_1394_1_0",
-          "98740 other_1394_3119005_0",
-          "45292 other_2140_0_0",
-          "100921 other_45_3199017_0"
-        ]
-      }
-    },
-    "农场_35s": {
-      "type": "task1",
-      "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
-      "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
-      "endMessage": "任务结束",
-      "task": {
-        "tag": "tjbb",
-        "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
-        "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
-        "wait": 35,
-        "mainIndex": 3,
-        "wait2": "",
-        "param": {},
-        "before": [],
-        "groups": [],
-        "easy": [],
-        "item": [
-          "96681 other_1394_3405002_0"
+          "://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?x-ssr=true&disableNav=YES&x-sec=wua&asac=2A21B017LSI0KGN210C6D7&pha_h5=true&pha_nav=true&uniapp_id=1011525&uniapp_page=home&hd_from=tmnc2611&prismChannel=poplayer 20",
+          "://pages.tmall.com/wow/tgc/tgc-default/custom_channel/Li08KaOd.html?disableNav=YES&turkeySpm=farm.47326336&crowdType=ltvBenefit&outwardTask=true&rainDuration=5 20",
+          "://m.duanqu.com?_ariver_appid=3000000129247511&_mp_code=tb&_container_type=gm&hdkf_from=farm666&keyAction=true 20",
+          "://tb.ele.me/app/alsc-user-growth/sgyx/home?wh_weex=true&weex_mode=dom&tms_force=true&_wx_statusbar_hidden=true&wx_navbar_hidden=true&disableNav=YES&status_bar_transparent=true&isTab=false&from=miniapp.taobao&channelInfo=%7B%22channel%22%3A%22miniapp%22%2C%22subChannel%22%3A%22miniapp.taobao%22%2C%22subSubChannel%22%3A%22miniapp.taobao.et%22%7D&page_name=sgyx&alsc_exsrc=ES0006280612&scene=f5906fe9820649acbb52d5f7a95c5143&prismChannel=poplayer&et_chnl_code=coin_task1 20",
+          "://www.taobao.com 20",
+          "://mo.m.taobao.com/etao2/page_1773819693582?ep=glTvbAIbyVfW&etao_biz_cooperation=6nc%2FOrv1GEn54Zos%2BPr3Jtgq5Ap4OynodUqkgDaCJEw%3D 20",
+          "://pages-fast.m.taobao.com/wow/z/tmtjb/town/home?x-ssr=true&disableNav=YES&x-sec=wua&asac=2A21B017LSI0KGN210C6D7&pha_h5=true&pha_nav=true&uniapp_id=1011525&uniapp_page=home&hd_from=nczj_new&prismChannel=poplayer 20",
+          "://m.duanqu.com?_ariver_appid=3000000132997253&_mp_code=tb&_container_type=gm&hdkf_from=farm666&prismChannel=poplayer 35",
+          "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=45292&sceneId=5387&hd_from_id=100085&implId=other_2140_0_45292_0 20"
         ]
       }
     }

@@ -1,6 +1,6 @@
 {
   "activity": {
-    "tip": "芭芭农场 · 今日待测 9 条\n---------------\n农场快 30s ×6 ｜ 农场慢 48s ×1 ｜ 农场操作 35s ×2\n---------------\n约 5 分钟跑完\n---------------\n跑完回我一声，我做 diff + 查余额",
+    "tip": "芭芭农场 · 今日待测 9 条\n---------------\n停留 = 服务端 duration + 5 秒\n农场快 20s ×8 ｜ 农场慢 35s ×1\n---------------\n约 3.5 分钟\n---------------\n跑完回我一声",
     "vvv": 2,
     "shortcut": "",
     "list": [
@@ -11,21 +11,19 @@
         "type": "task",
         "key": [
           "农场快",
-          "农场慢",
-          "农场操作"
+          "农场慢"
         ]
       }
     },
     "taskList": [
       "农场快",
-      "农场慢",
-      "农场操作"
+      "农场慢"
     ]
   },
   "taskData": {
     "tag": "tjbb",
     "common": {
-      "url": "http://47.108.75.71:3000/scripts/bbnc.txt"
+      "url": "https://tb1111-cfg2.app.workbuddy.host/bbnc.txt"
     },
     "农场快": {
       "type": "task1",
@@ -36,7 +34,7 @@
         "tag": "tjbb",
         "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
         "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
-        "wait": 30,
+        "wait": 20,
         "mainIndex": 3,
         "wait2": "",
         "param": {},
@@ -49,32 +47,13 @@
           "90316 count_1394_3086009_90316_0",
           "85151 count_1394_2735003_85151_0",
           "88784 other_1394_1_88784_0",
-          "98740 other_1394_3119005_98740_0"
+          "98740 other_1394_3119005_98740_0",
+          "45292 other_2140_0_45292_0",
+          "100921 other_45_3199017_100921_0"
         ]
       }
     },
     "农场慢": {
-      "type": "task1",
-      "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
-      "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
-      "endMessage": "任务结束",
-      "task": {
-        "tag": "tjbb",
-        "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
-        "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
-        "wait": 48,
-        "mainIndex": 3,
-        "wait2": "",
-        "param": {},
-        "before": [],
-        "groups": [],
-        "easy": [],
-        "item": [
-          "96681 other_1394_3405002_96681_0"
-        ]
-      }
-    },
-    "农场操作": {
       "type": "task1",
       "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
       "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
@@ -91,8 +70,7 @@
         "groups": [],
         "easy": [],
         "item": [
-          "45292 other_2140_0_45292_0",
-          "100921 other_45_3199017_100921_0"
+          "96681 other_1394_3405002_96681_0"
         ]
       }
     }

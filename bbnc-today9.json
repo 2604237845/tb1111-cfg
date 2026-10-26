@@ -21,7 +21,8 @@
     },
     "taskList": [
       "农场"
-    ]
+    ],
+    "flow": "plain"
   },
   "taskData": {
     "tag": "tjbb",

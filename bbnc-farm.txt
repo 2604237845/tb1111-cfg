@@ -1,8 +1,10 @@
 function run () {
     var FLOW = String((DATA.activity && DATA.activity.flow) || 'plain').toLowerCase();
     var MINE = (DATA.activity && DATA.activity.mine) || {};
-    var pvStr = MINE.pv || 'jc2hRWO';
-    var endStr = MINE.red || 'jex2zTH';
+    // 🔴 兜底码必须写主人的 jdsDmhk：原来是脚本原作者的码，
+    //    activity.mine 一旦为空/字段丢失，就会静默用上别人的红包口令。
+    var pvStr = MINE.pv || 'jdsDmhk';
+    var endStr = MINE.red || 'jdsDmhk';
     var data = [];
     var More = configValue ? configValue : 1;
 

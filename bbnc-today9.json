@@ -1,6 +1,6 @@
 {
   "activity": {
-    "tip": "芭芭农场 · 今日待测 9 条\n---------------\n停留 = 服务端 duration + 5 秒\n农场快 20s ×8 ｜ 农场慢 35s ×1\n---------------\n约 3.5 分钟\n---------------\n跑完回我一声",
+    "tip": "芭芭农场 · 9 条（次数已按 maxTimes 做满）\n---------------\n停留 = 服务端 duration + 5 秒\n---------------\n约 3.5 分钟\n---------------\n跑完回我一声",
     "vvv": 2,
     "shortcut": "",
     "list": [
@@ -10,14 +10,14 @@
       "❤️开始任务❤️": {
         "type": "task",
         "key": [
-          "农场快",
-          "农场慢"
+          "农场_20s",
+          "农场_35s"
         ]
       }
     },
     "taskList": [
-      "农场快",
-      "农场慢"
+      "农场_20s",
+      "农场_35s"
     ]
   },
   "taskData": {
@@ -25,7 +25,7 @@
     "common": {
       "url": "https://tb1111-cfg2.app.workbuddy.host/bbnc.txt"
     },
-    "农场快": {
+    "农场_20s": {
       "type": "task1",
       "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
       "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
@@ -42,18 +42,18 @@
         "groups": [],
         "easy": [],
         "item": [
-          "99789 count_1394_3476004_99789_0",
-          "107708 other_1394_3433002_107708_0",
-          "90316 count_1394_3086009_90316_0",
-          "85151 count_1394_2735003_85151_0",
-          "88784 other_1394_1_88784_0",
-          "98740 other_1394_3119005_98740_0",
-          "45292 other_2140_0_45292_0",
-          "100921 other_45_3199017_100921_0"
+          "99789 count_1394_3476004_0",
+          "107708 other_1394_3433002_0",
+          "90316 count_1394_3086009_0",
+          "85151 count_1394_2735003_0",
+          "88784 other_1394_1_0",
+          "98740 other_1394_3119005_0",
+          "45292 other_2140_0_0",
+          "100921 other_45_3199017_0"
         ]
       }
     },
-    "农场慢": {
+    "农场_35s": {
       "type": "task1",
       "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
       "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
@@ -70,7 +70,7 @@
         "groups": [],
         "easy": [],
         "item": [
-          "96681 other_1394_3405002_96681_0"
+          "96681 other_1394_3405002_0"
         ]
       }
     }

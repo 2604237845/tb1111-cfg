@@ -151,7 +151,8 @@ const PUBLIC_CONFIG = {
 const SCENES = [
   { id: '8917', name: '双11能量场景赛车', hint: 'A 指令 · 淘宝主站任务' },
   { id: '9647', name: '寻宝中国', hint: 'B 指令 · 直播任务' },
-  { id: '5365', name: '淘金币日常版', hint: 'C 指令 · 浮层页任务' }
+  { id: '5365', name: '淘金币日常版', hint: 'C 指令 · 浮层页任务' },
+  { id: '5387', name: '芭芭农场', hint: 'D 指令 · 农场承接页 · 多 sceneId 分块' }
 ];
 
 const SOURCE_LABEL = {
@@ -281,11 +282,20 @@ function renderSnapshot() {
     return;
   }
   $('snapWhen').textContent = fmtTime(snap.created_at);
+  // 脚本地址：从留档的配置全文里取，方便一眼确认指向哪个源
+  let scriptUrl = '-';
+  try {
+    const p = JSON.parse(snap.payload || '{}');
+    scriptUrl = (p.taskData && p.taskData.common && p.taskData.common.url) || '-';
+  } catch (e) { /* payload 为空或不是 JSON 就算了 */ }
+
   $('snapGrid').innerHTML = `
     <div class="kv"><i>配置条数</i><b>${snap.item_count}</b></div>
     <div class="kv"><i>任务个数</i><b>${snap.task_count}</b></div>
     <div class="kv"><i>发布来源</i><b class="small" title="${esc(snap.source || '')}">${esc(SOURCE_LABEL[snap.source] || snap.source || '-')}</b></div>
+    <div class="kv"><i>备注</i><b class="small" title="${esc(snap.note || '')}">${esc(snap.note || '-')}</b></div>
     <div class="kv" style="grid-column:span 2"><i>文件指纹 sha256</i><b class="small">${esc(String(snap.sha256 || '').slice(0, 24))}…</b></div>
+    <div class="kv" style="grid-column:span 2"><i>脚本地址</i><b class="small" style="word-break:break-all">${esc(scriptUrl)}</b></div>
   `;
 }
 
@@ -341,11 +351,12 @@ function renderHistory() {
   const rows = cache.snapshots.filter(s => s.scene === active);
   if (!rows.length) { $('history').innerHTML = `<div class="empty">暂无版本记录</div>`; return; }
   $('history').innerHTML = `<table><thead><tr>
-      <th style="width:112px">时间</th><th style="width:64px">条数</th><th style="width:58px">任务</th><th>指纹</th>
+      <th style="width:112px">时间</th><th style="width:56px">条数</th><th style="width:52px">任务</th><th style="width:130px">备注</th><th>指纹</th>
     </tr></thead><tbody>${rows.map(s => `<tr>
       <td class="mono">${esc(fmtTime(s.created_at))}</td>
       <td>${s.item_count}</td>
       <td>${s.task_count}</td>
+      <td class="small" title="${esc(s.note || '')}">${esc(s.note || '')}</td>
       <td class="mono" title="${esc(s.sha256)}">${esc(String(s.sha256).slice(0, 12))}</td>
     </tr>`).join('')}</tbody></table>`;
 }

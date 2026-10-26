@@ -1,0 +1,116 @@
+{
+  "activity": {
+    "tip": "芭芭农场 · 测试配置（2026-10-26）\n---------------\n分三块跑：农场快(30s) / 农场慢(48s) / 农场操作(35s)\n---------------\n时间已按服务端 duration 加足余量，别缩短\n---------------\n跑完回我一声，我做 diff",
+    "vvv": 2,
+    "shortcut": "",
+    "list": [
+      "❤️开始任务❤️"
+    ],
+    "mapping": {
+      "❤️开始任务❤️": {
+        "type": "task",
+        "key": [
+          "农场快",
+          "农场慢",
+          "农场操作"
+        ]
+      }
+    },
+    "taskList": [
+      "农场快",
+      "农场慢",
+      "农场操作"
+    ]
+  },
+  "taskData": {
+    "tag": "tjbb",
+    "common": {
+      "url": "http://47.108.75.71:3000/scripts/bbnc.txt"
+    },
+    "农场快": {
+      "type": "task1",
+      "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "endMessage": "任务结束",
+      "task": {
+        "tag": "tjbb",
+        "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
+        "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
+        "wait": 30,
+        "mainIndex": 3,
+        "wait2": "",
+        "param": {},
+        "before": [],
+        "groups": [],
+        "easy": [],
+        "item": [
+          "45308 other_1928_424002_45308_0",
+          "77523 count_1394_1862002_77523_0",
+          "71790 other_1394_481002_71790_0",
+          "106371 other_1394_3428002_106371_0",
+          "45310 other_1916_1_45310_0",
+          "90023 cloudsail_1273_125400501040021_90023_0",
+          "90023 cloudsail_1273_125400501040021_90023_1",
+          "90023 cloudsail_1273_125400501040021_90023_2",
+          "90023 cloudsail_1273_125400501040021_90023_3",
+          "89750 cloudsail_1270_125400501040010_89750_0",
+          "90722 cloudsail_1091_125400501040003_90722_0",
+          "99789 count_1394_3476004_99789_0",
+          "107708 other_1394_3433002_107708_0",
+          "90316 count_1394_3086009_90316_0",
+          "85151 count_1394_2735003_85151_0",
+          "88784 other_1394_1_88784_0",
+          "98740 other_1394_3119005_98740_0"
+        ]
+      }
+    },
+    "农场慢": {
+      "type": "task1",
+      "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "endMessage": "任务结束",
+      "task": {
+        "tag": "tjbb",
+        "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
+        "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
+        "wait": 48,
+        "mainIndex": 3,
+        "wait2": "",
+        "param": {},
+        "before": [],
+        "groups": [],
+        "easy": [],
+        "item": [
+          "96681 other_1394_3405002_96681_0",
+          "89639 other_1394_0_89639_0",
+          "89639 other_1394_0_89639_1",
+          "89639 other_1394_0_89639_2",
+          "89639 other_1394_0_89639_3",
+          "89639 other_1394_0_89639_4"
+        ]
+      }
+    },
+    "农场操作": {
+      "type": "task1",
+      "endpage": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "main": "taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fm.taobao.com",
+      "endMessage": "任务结束",
+      "task": {
+        "tag": "tjbb",
+        "scheme": "taobao://m.taobao.com/tbopen/index.html?h5Url=",
+        "baseurl": "://pages.tmall.com/wow/go/mx-growth/undertake/3d47a29c22504699886d09f9b7a5a067?disableNav=YES&deliveryId=占位参数1&sceneId=5387&hd_from_id=100085&implId=占位参数2",
+        "wait": 35,
+        "mainIndex": 3,
+        "wait2": "",
+        "param": {},
+        "before": [],
+        "groups": [],
+        "easy": [],
+        "item": [
+          "45292 other_2140_0_45292_0",
+          "100921 other_45_3199017_100921_0"
+        ]
+      }
+    }
+  }
+}

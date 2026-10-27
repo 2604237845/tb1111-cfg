@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="data-spm" content="a21eh1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover" />
+    <meta name="aplus-version" content="aplus_wap">
+<meta name="release-info" content="version=0.0.5-selfhost,app-id=179600" />
+<meta name="aplus-waiting" content="MAN">
+    <title></title>
+  </head>
+  <body>
+  <div id="root"></div>
+  <script>
+  /* ============ 调试日志（页面顶部小字，方便截图反馈） ============ */
+  window.__DIAG = [];
+  (function(){
+    var box = document.createElement('div');
+    box.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#fffde7;border-bottom:1px solid #ccc;font-size:11px;line-height:1.5;padding:4px 6px;max-height:38%;overflow:auto;font-family:monospace;color:#333';
+    box.id = 'diag';
+    function put(msg, color){
+      var d = document.createElement('div');
+      var t = new Date().toTimeString().slice(0,8);
+      d.innerHTML = '<b style="color:'+(color||'#333')+'">'+t+'</b> '+msg;
+      box.appendChild(d);
+      window.__DIAG.push(msg);
+    }
+    window.__put = put;
+    document.write(box.outerHTML);
+  })();
+  </script>
+  <script>
+  __put('1. 页面加载 ' + location.search.slice(0,120));
+  </script>
+  <script class="__combo_script__" crossorigin="anonymous" src="https://g.alicdn.com/??code/lib/rax/1.2.2/rax.min.umd.js,mtb/lib-promise/3.1.3/polyfillB.js,ali-lib/appear-polyfill/0.1.2/index.js,mtb/lib-windvane/3.0.7/windvane.js,mtb/lib-login/2.2.0/login.js,jstracker/sdk-assests/5.5.13/index.js,ali-lib/aplus/0.2.0/index.js"></script>
+  <script>
+  __put('2. 官方库加载完成，WindVane=' + (typeof window.WindVane));
+  /* ============ 假桥：覆盖官方 WindVane（破解核心） ============
+     模块 23 执行时 (r=window.WindVane) 会取到本假桥：
+     - getPopLayerVersion → 立即成功回调（0.0.5 校验通过）
+     - display/close → 空操作成功（无原生浮层也不影响计时）
+     - 其他方法 → 原样成功（兜底）                                    */
+  window.WindVane = {
+    isAvailable: true,
+    call: function(cls, method, data, onS, onF){
+      __put('   [桥] ' + cls + '.' + method + ' → 假成功', '#0a7d32');
+      if (onS) { try { onS({version:'9.99.9', ret:'SUCCESS'}); } catch(e){} }
+    },
+    call2: function(cls, method, data, onS){
+      __put('   [桥] ' + cls + '.' + method + ' → 假成功', '#0a7d32');
+      if (onS) { try { onS({version:'9.99.9', ret:'SUCCESS'}); } catch(e){} }
+    }
+  };
+  __put('3. 假桥已就位（getPopLayerVersion 将走成功回调）', '#0a7d32');
+  </script>
+  <script>window.__ASSET_PATH__='//g.alicdn.com/tbsearchwireless-pages/tao-gold-srp-task-pop/0.0.5/web/'</script>
+  <script crossorigin="anonymous" type="application/javascript" src="//g.alicdn.com/tbsearchwireless-pages/tao-gold-srp-task-pop/0.0.5/web/index.js"></script>
+  <script>
+  __put('4. 官方 0.0.5 index.js 已加载（bootstrap+主包），chunk 将动态拉取');
+  // 兜底：10 秒后如果页面还是没内容，报告出来
+  setTimeout(function(){
+    var root = document.getElementById('root');
+    if (!root || !root.childNodes.length) {
+      __put('⚠ 10 秒后 root 仍为空——可能有别的错误，请截图本页全部文字', '#d0021b');
+    } else {
+      __put('✓ root 已有内容（任务组件已渲染）', '#0a7d32');
+    }
+  }, 10000);
+  </script>
+  <script class="__combo_script__" crossorigin="anonymous" src="https://g.alicdn.com/??"></script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>浮层页环境诊断</title>
+<style>
+body{font-family:-apple-system,sans-serif;background:#f5f5f5;margin:0;padding:12px;font-size:15px}
+h2{font-size:18px;margin:8px 0}
+.card{background:#fff;border-radius:10px;padding:10px 12px;margin:8px 0;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.ok{color:#0a7d32;font-weight:bold}
+.fail{color:#d0021b;font-weight:bold}
+.warn{color:#b26b00;font-weight:bold}
+pre{white-space:pre-wrap;word-break:break-all;font-size:12px;background:#f0f0f0;padding:6px;border-radius:6px;margin:4px 0}
+</style>
+</head>
+<body>
+<h2>🔍 浮层页环境诊断（0.0.5 破解前哨）</h2>
+<div id="log"></div>
+<script src="https://g.alicdn.com/mtb/lib-windvane/3.0.7/windvane.js"></script>
+<script src="https://g.alicdn.com/mtb/lib-mtop/2.3.1/mtop.js"></script>
+<script>
+var logBox = document.getElementById('log');
+function card(title, detail, cls){
+  var d = document.createElement('div'); d.className='card';
+  d.innerHTML = '<div class="'+(cls||'')+'">'+title+'</div>' + (detail?'<pre>'+detail+'</pre>':'');
+  logBox.appendChild(d); return d;
+}
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+// 1) 环境
+card('1. 页面 URL', esc(location.href));
+card('2. UA', esc(navigator.userAgent));
+
+// 2) WindVane 桥
+if (typeof window.WindVane !== 'undefined') {
+  card('3. WindVane 桥', '✅ 存在（typeof=' + typeof window.WindVane + '）', 'ok');
+  // 3) 关键校验：getPopLayerVersion
+  try {
+    window.WindVane.call('WVPopLayer', 'getPopLayerVersion', {}, function(e){
+      card('4. WVPopLayer.getPopLayerVersion', '✅ 成功 → 0.0.5 校验可过！详情：' + esc(JSON.stringify(e)), 'ok');
+      card('结论', 'tbopen 容器能过校验——官方白屏另有原因（可能是时机/依赖），可破解', 'ok');
+    }, function(e){
+      card('4. WVPopLayer.getPopLayerVersion', '❌ 失败回调 → 这就是白屏根因。详情：' + esc(JSON.stringify(e)), 'fail');
+      card('结论', 'tbopen 容器拿不到该接口——只能走自建页复刻逻辑路线', 'fail');
+    }, 8000);
+  } catch(err) {
+    card('4. WVPopLayer.getPopLayerVersion', '❌ 调用抛异常：' + esc(err.message), 'fail');
+  }
+  // 4) 对照：0.0.4 时代成功过的 display
+  try {
+    window.WindVane.call('WVPopLayer', 'display', {}, function(e){
+      card('5. 对照 WVPopLayer.display', '✅ 成功（0.0.4 时代的老方法仍可用）', 'ok');
+    }, function(e){
+      card('5. 对照 WVPopLayer.display', '❌ 失败：' + esc(JSON.stringify(e)), 'fail');
+    }, 8000);
+  } catch(err) {
+    card('5. 对照 WVPopLayer.display', '❌ 异常：' + esc(err.message), 'fail');
+  }
+} else {
+  card('3. WindVane 桥', '❌ 不存在（页面不在淘宝容器内？）', 'fail');
+}
+
+// 5) mtop queryItem（登录态 + 数据可达性）
+try {
+  if (typeof mtop !== 'undefined') {
+    mtop.request({
+      api: 'mtop.taobao.pentaprism.scene.queryItem', v: '1.0',
+      data: {sceneId:'8917', deliveryId:'99726'}, ecode: 1, H5Request: true
+    }, function(r){
+      var d = (r && r.data) || {}; var m = d.model || {};
+      var impl = (m.taskParams || {}).implId;
+      card('6. mtop queryItem', '✅ 通！status=' + esc(m.status || '') + '  implId=' + esc(impl || '(空)')
+        + '  → 服务端对「本页来源」是否剥 implId 的答案', m.status ? 'ok' : 'warn');
+    }, function(e){
+      card('6. mtop queryItem', '❌ 失败：' + esc(JSON.stringify(e).slice(0,200)), 'fail');
+    });
+  } else {
+    card('6. mtop', '❌ mtop.js 未加载成功', 'fail');
+  }
+} catch(err) {
+  card('6. mtop queryItem', '❌ 异常：' + esc(err.message), 'fail');
+}
+
+// 6) 触发器提示（不自动调）
+card('说明', '本页只做只读诊断，不会消耗任何任务次数。请把整页截图发给助手。', 'warn');
+</script>
+</body>
+</html>
